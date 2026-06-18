@@ -1,0 +1,3 @@
+{'session_name': 'Energetic Rock Session', 'recommendation_count': 5, 'response_time_seconds': 0.0049, 'max_artist_repetition': 2, 'max_genre_repetition': 3, 'passed_response_time': True, 'passed_artist_diversity': True, 'passed_genre_diversity': True}
+{'session_name': 'Calm Alternative Session', 'recommendation_count': 5, 'response_time_seconds': 0.0033, 'max_artist_repetition': 1, 'max_genre_repetition': 3, 'passed_response_time': True, 'passed_artist_diversity': True, 'passed_genre_diversity': True}
+{'session_name': 'Indie Discovery Session', 'recommendation_count': 5, 'response_time_seconds': 0.0031, 'max_artist_repetition': 1, 'max_genre_repetition': 2, 'passed_response_time': True, 'passed_artist_diversity': True, 'passed_genre_diversity': True}
