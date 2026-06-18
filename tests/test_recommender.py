@@ -12,6 +12,7 @@ REQUIRED_RECOMMENDATION_FIELDS = {
     "energy",
     "popularity",
     "score",
+    "reason",
 }
 
 

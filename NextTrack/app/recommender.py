@@ -5,6 +5,25 @@ from sklearn.preprocessing import MinMaxScaler
 
 DATASET_PATH = Path(__file__).parent / "dataset.csv"
 
+
+def build_recommendation_reason(track, genres, mood, seed_artists):
+    reasons = []
+
+    if track["genre"] in genres:
+        reasons.append("matched the requested genre")
+
+    if track["mood"] == mood:
+        reasons.append("matched the requested mood")
+
+    if track["artist"] in seed_artists:
+        reasons.append("matched one of the seed artists")
+
+    if not reasons:
+        reasons.append("was selected based on overall similarity")
+
+    return "This track was recommended because it " + ", ".join(reasons) + "."
+
+
 def get_recommendations(genres, mood, seed_artists, limit=5):
     df = pd.read_csv(DATASET_PATH)
 
@@ -58,11 +77,12 @@ def get_recommendations(genres, mood, seed_artists, limit=5):
 
     ranked_tracks = df.sort_values(by="score", ascending=False)
 
-    diversified = apply_diversity_filter(ranked_tracks, limit)
+    diversified = apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit)
 
     return diversified
 
-def apply_diversity_filter(ranked_tracks, limit):
+
+def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
     recommendations = []
     artist_count = {}
     genre_count = {}
@@ -85,7 +105,8 @@ def apply_diversity_filter(ranked_tracks, limit):
             "tempo": int(row["tempo"]),
             "energy": float(row["energy"]),
             "popularity": int(row["popularity"]),
-            "score": round(float(row["score"]), 3)
+            "score": round(float(row["score"]), 3),
+            "reason": build_recommendation_reason(row, genres, mood, seed_artists),
         })
 
         artist_count[artist] = artist_count.get(artist, 0) + 1
