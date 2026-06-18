@@ -6,6 +6,30 @@ from app.recommender import get_recommendations
 from app.test_sessions import TEST_SESSIONS
 
 
+def calculate_relevance_metrics(recommendations, session):
+    expected_genres = set(session["input"]["genres"])
+    expected_mood = session["input"]["mood"]
+
+    genre_matches = sum(
+        1 for item in recommendations
+        if item["genre"] in expected_genres
+    )
+
+    mood_matches = sum(
+        1 for item in recommendations
+        if item["mood"] == expected_mood
+    )
+
+    total = len(recommendations)
+
+    return {
+        "genre_match_count": genre_matches,
+        "mood_match_count": mood_matches,
+        "genre_match_rate": round(genre_matches / total, 2) if total else 0,
+        "mood_match_rate": round(mood_matches / total, 2) if total else 0,
+    }
+
+
 def evaluate_session(session):
     start_time = time.time()
 
@@ -24,12 +48,18 @@ def evaluate_session(session):
     max_artist_repetition = max(artist_counts.values()) if artist_counts else 0
     max_genre_repetition = max(genre_counts.values()) if genre_counts else 0
 
+    relevance_metrics = calculate_relevance_metrics(recommendations, session)
+
     return {
         "session_name": session["name"],
         "recommendation_count": len(recommendations),
         "response_time_seconds": round(response_time, 4),
         "max_artist_repetition": max_artist_repetition,
         "max_genre_repetition": max_genre_repetition,
+        "genre_match_count": relevance_metrics["genre_match_count"],
+        "mood_match_count": relevance_metrics["mood_match_count"],
+        "genre_match_rate": relevance_metrics["genre_match_rate"],
+        "mood_match_rate": relevance_metrics["mood_match_rate"],
         "passed_response_time": response_time < 1,
         "passed_artist_diversity": max_artist_repetition <= 2,
         "passed_genre_diversity": max_genre_repetition <= 3,
@@ -47,6 +77,10 @@ def save_results_to_csv(results, filename="evaluation_results.csv"):
         "response_time_seconds",
         "max_artist_repetition",
         "max_genre_repetition",
+        "genre_match_count",
+        "mood_match_count",
+        "genre_match_rate",
+        "mood_match_rate",
         "passed_response_time",
         "passed_artist_diversity",
         "passed_genre_diversity",
