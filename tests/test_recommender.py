@@ -84,3 +84,15 @@ def test_unknown_inputs_do_not_crash_and_still_return_recommendations():
 
     assert isinstance(recommendations, list)
     assert len(recommendations) > 0
+
+def test_recommendation_contains_reason():
+    recommendations = get_recommendations(
+        genres=["rock"],
+        mood="energetic",
+        seed_artists=["Arctic Monkeys"],
+        limit=5,
+    )
+
+    for recommendation in recommendations:
+        assert "reason" in recommendation
+        assert recommendation["reason"] != ""

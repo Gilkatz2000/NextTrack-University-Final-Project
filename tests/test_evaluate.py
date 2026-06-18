@@ -20,3 +20,13 @@ def test_run_evaluation_returns_one_result_per_test_session():
 
     assert len(results) == len(TEST_SESSIONS)
     assert all("session_name" in result for result in results)
+
+def test_genre_match_rate_is_valid():
+    result = evaluate_session(TEST_SESSIONS[0])
+
+    assert 0 <= result["genre_match_rate"] <= 1
+
+def test_mood_match_rate_is_valid():
+    result = evaluate_session(TEST_SESSIONS[0])
+
+    assert 0 <= result["mood_match_rate"] <= 1
