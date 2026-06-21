@@ -2,7 +2,6 @@ from collections import Counter
 
 from app.recommender import get_recommendations
 
-
 REQUIRED_RECOMMENDATION_FIELDS = {
     "track",
     "artist",
@@ -11,10 +10,13 @@ REQUIRED_RECOMMENDATION_FIELDS = {
     "tempo",
     "energy",
     "popularity",
+    "danceability",
+    "valence",
+    "release_year",
+    "spotify_url",
     "score",
     "reason",
 }
-
 
 def test_get_recommendations_returns_limited_list_with_expected_fields():
     recommendations = get_recommendations(

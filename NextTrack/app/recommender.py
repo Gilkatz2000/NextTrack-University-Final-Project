@@ -1,10 +1,8 @@
 import pandas as pd
-from pathlib import Path
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
 
-DATASET_PATH = Path(__file__).parent / "dataset.csv"
-
+from app.data_loader import load_tracks
 
 def build_recommendation_reason(track, genres, mood, seed_artists):
     reasons = []
@@ -25,7 +23,7 @@ def build_recommendation_reason(track, genres, mood, seed_artists):
 
 
 def get_recommendations(genres, mood, seed_artists, limit=5):
-    df = pd.read_csv(DATASET_PATH)
+    df = load_tracks()
 
     genres = [g.lower() for g in genres]
     seed_artists = [a.lower() for a in seed_artists]
@@ -35,16 +33,37 @@ def get_recommendations(genres, mood, seed_artists, limit=5):
     df["mood"] = df["mood"].str.lower()
     df["artist"] = df["artist"].str.lower()
 
-    feature_df = df[["genre", "mood", "artist", "tempo", "energy", "popularity"]].copy()
+    feature_df = df[
+        [
+            "genre",
+            "mood",
+            "artist",
+            "tempo",
+            "energy",
+            "popularity",
+            "danceability",
+            "valence",
+            "release_year",
+        ]
+    ].copy()
 
     encoded_features = pd.get_dummies(
         feature_df,
         columns=["genre", "mood", "artist"]
     )
 
+    numeric_columns = [
+        "tempo",
+        "energy",
+        "popularity",
+        "danceability",
+        "valence",
+        "release_year",
+    ]
+
     scaler = MinMaxScaler()
-    encoded_features[["tempo", "energy", "popularity"]] = scaler.fit_transform(
-        encoded_features[["tempo", "energy", "popularity"]]
+    encoded_features[numeric_columns] = scaler.fit_transform(
+        encoded_features[numeric_columns]
     )
 
     session_vector = pd.DataFrame(
@@ -70,6 +89,9 @@ def get_recommendations(genres, mood, seed_artists, limit=5):
     session_vector["energy"] = 0.85
     session_vector["tempo"] = 0.80
     session_vector["popularity"] = 0.50
+    session_vector["danceability"] = 0.70
+    session_vector["valence"] = 0.65
+    session_vector["release_year"] = 0.85
 
     similarity_scores = cosine_similarity(session_vector, encoded_features)[0]
 
@@ -77,7 +99,13 @@ def get_recommendations(genres, mood, seed_artists, limit=5):
 
     ranked_tracks = df.sort_values(by="score", ascending=False)
 
-    diversified = apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit)
+    diversified = apply_diversity_filter(
+        ranked_tracks,
+        genres,
+        mood,
+        seed_artists,
+        limit
+    )
 
     return diversified
 
@@ -97,7 +125,7 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
         if genre_count.get(genre, 0) >= 3:
             continue
 
-        recommendations.append({
+        recommendation = {
             "track": row["track"],
             "artist": row["artist"].title(),
             "genre": row["genre"],
@@ -105,9 +133,22 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
             "tempo": int(row["tempo"]),
             "energy": float(row["energy"]),
             "popularity": int(row["popularity"]),
+            "danceability": float(row["danceability"]),
+            "valence": float(row["valence"]),
+            "release_year": int(row["release_year"]),
             "score": round(float(row["score"]), 3),
-            "reason": build_recommendation_reason(row, genres, mood, seed_artists),
-        })
+            "reason": build_recommendation_reason(
+                row,
+                genres,
+                mood,
+                seed_artists
+            ),
+        }
+
+        if "spotify_url" in row:
+            recommendation["spotify_url"] = row["spotify_url"]
+
+        recommendations.append(recommendation)
 
         artist_count[artist] = artist_count.get(artist, 0) + 1
         genre_count[genre] = genre_count.get(genre, 0) + 1
