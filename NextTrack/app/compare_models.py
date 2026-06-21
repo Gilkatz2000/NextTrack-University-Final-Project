@@ -4,12 +4,13 @@ from collections import Counter
 
 from app.baseline import get_baseline_recommendations
 from app.recommender import get_recommendations
+from app.recommender_v2 import get_recommendations_v2
 
 
 session = {
     "genres": ["rock"],
     "mood": "energetic",
-    "seed_artists": ["Arctic Monkeys"]
+    "seed_artists": ["Arctic Monkeys"],
 }
 
 
@@ -27,80 +28,113 @@ def calculate_metrics(recommendations, response_time):
     }
 
 
-def save_comparison_to_csv(nexttrack_metrics, baseline_metrics):
+def save_comparison_to_csv(baseline_metrics, v1_metrics, v2_metrics):
     rows = [
         {
             "metric": "Recommendations Returned",
-            "nexttrack": nexttrack_metrics["recommendations_returned"],
             "baseline": baseline_metrics["recommendations_returned"],
+            "nexttrack_v1": v1_metrics["recommendations_returned"],
+            "nexttrack_v2": v2_metrics["recommendations_returned"],
         },
         {
             "metric": "Unique Artists",
-            "nexttrack": nexttrack_metrics["unique_artists"],
             "baseline": baseline_metrics["unique_artists"],
+            "nexttrack_v1": v1_metrics["unique_artists"],
+            "nexttrack_v2": v2_metrics["unique_artists"],
         },
         {
             "metric": "Unique Genres",
-            "nexttrack": nexttrack_metrics["unique_genres"],
             "baseline": baseline_metrics["unique_genres"],
+            "nexttrack_v1": v1_metrics["unique_genres"],
+            "nexttrack_v2": v2_metrics["unique_genres"],
         },
         {
             "metric": "Max Artist Repetition",
-            "nexttrack": nexttrack_metrics["max_artist_repetition"],
             "baseline": baseline_metrics["max_artist_repetition"],
+            "nexttrack_v1": v1_metrics["max_artist_repetition"],
+            "nexttrack_v2": v2_metrics["max_artist_repetition"],
         },
         {
             "metric": "Max Genre Repetition",
-            "nexttrack": nexttrack_metrics["max_genre_repetition"],
             "baseline": baseline_metrics["max_genre_repetition"],
+            "nexttrack_v1": v1_metrics["max_genre_repetition"],
+            "nexttrack_v2": v2_metrics["max_genre_repetition"],
         },
         {
             "metric": "Response Time Seconds",
-            "nexttrack": nexttrack_metrics["response_time_seconds"],
             "baseline": baseline_metrics["response_time_seconds"],
+            "nexttrack_v1": v1_metrics["response_time_seconds"],
+            "nexttrack_v2": v2_metrics["response_time_seconds"],
         },
     ]
 
-    with open("model_comparison_metrics.csv", "w", newline="") as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=["metric", "nexttrack", "baseline"])
+    with open("model_comparison_v2_metrics.csv", "w", newline="") as csv_file:
+        writer = csv.DictWriter(
+            csv_file,
+            fieldnames=["metric", "baseline", "nexttrack_v1", "nexttrack_v2"],
+        )
         writer.writeheader()
         writer.writerows(rows)
 
 
-def main():
+def time_function(function, *args):
     start = time.time()
-    nexttrack_recommendations = get_recommendations(
+    result = function(*args)
+    response_time = time.time() - start
+
+    return result, response_time
+
+
+def print_recommendations(title, recommendations):
+    print(f"\n{title}\n")
+
+    for song in recommendations:
+        print(f'{song["track"]} - {song["artist"]}')
+
+
+def main():
+    baseline_recommendations, baseline_time = time_function(
+        get_baseline_recommendations,
+        session,
+    )
+
+    v1_recommendations, v1_time = time_function(
+        get_recommendations,
         session["genres"],
         session["mood"],
         session["seed_artists"],
     )
-    nexttrack_time = time.time() - start
 
-    start = time.time()
-    baseline_recommendations = get_baseline_recommendations(session)
-    baseline_time = time.time() - start
+    v2_recommendations, v2_time = time_function(
+        get_recommendations_v2,
+        session["genres"],
+        session["mood"],
+        session["seed_artists"],
+    )
 
-    nexttrack_metrics = calculate_metrics(nexttrack_recommendations, nexttrack_time)
     baseline_metrics = calculate_metrics(baseline_recommendations, baseline_time)
+    v1_metrics = calculate_metrics(v1_recommendations, v1_time)
+    v2_metrics = calculate_metrics(v2_recommendations, v2_time)
 
-    print("\nNEXTTRACK RECOMMENDATIONS\n")
-    for song in nexttrack_recommendations:
-        print(f'{song["track"]} - {song["artist"]}')
-
-    print("\nBASELINE RECOMMENDATIONS\n")
-    for song in baseline_recommendations:
-        print(f'{song["track"]} - {song["artist"]}')
+    print_recommendations("BASELINE RECOMMENDATIONS", baseline_recommendations)
+    print_recommendations("NEXTTRACK V1 RECOMMENDATIONS", v1_recommendations)
+    print_recommendations("NEXTTRACK V2 RECOMMENDATIONS", v2_recommendations)
 
     print("\nCOMPARISON METRICS\n")
-    print(f'NextTrack unique artists: {nexttrack_metrics["unique_artists"]}')
     print(f'Baseline unique artists: {baseline_metrics["unique_artists"]}')
-    print(f'NextTrack max artist repetition: {nexttrack_metrics["max_artist_repetition"]}')
+    print(f'NextTrack v1 unique artists: {v1_metrics["unique_artists"]}')
+    print(f'NextTrack v2 unique artists: {v2_metrics["unique_artists"]}')
+    print()
     print(f'Baseline max artist repetition: {baseline_metrics["max_artist_repetition"]}')
-    print(f'NextTrack response time: {nexttrack_metrics["response_time_seconds"]}')
+    print(f'NextTrack v1 max artist repetition: {v1_metrics["max_artist_repetition"]}')
+    print(f'NextTrack v2 max artist repetition: {v2_metrics["max_artist_repetition"]}')
+    print()
     print(f'Baseline response time: {baseline_metrics["response_time_seconds"]}')
+    print(f'NextTrack v1 response time: {v1_metrics["response_time_seconds"]}')
+    print(f'NextTrack v2 response time: {v2_metrics["response_time_seconds"]}')
 
-    save_comparison_to_csv(nexttrack_metrics, baseline_metrics)
-    print("\nComparison metrics saved to model_comparison_metrics.csv")
+    save_comparison_to_csv(baseline_metrics, v1_metrics, v2_metrics)
+    print("\nComparison metrics saved to model_comparison_v2_metrics.csv")
 
 
 if __name__ == "__main__":
