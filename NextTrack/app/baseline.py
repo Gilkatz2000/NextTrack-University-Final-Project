@@ -1,11 +1,12 @@
-import pandas as pd
+from app.data_loader import load_tracks
 
-DATASET_PATH = "NextTrack/app/dataset.csv"
 
 def get_baseline_recommendations(session, top_n=5):
-    df = pd.read_csv(DATASET_PATH)
+    df = load_tracks()
 
-    genres = session.get("genres", [])
+    genres = [genre.lower() for genre in session.get("genres", [])]
+
+    df["genre"] = df["genre"].str.lower()
 
     results = df[df["genre"].isin(genres)]
 

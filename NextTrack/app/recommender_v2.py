@@ -1,8 +1,4 @@
-from pathlib import Path
-
-import pandas as pd
-
-DATASET_PATH = Path(__file__).parent / "dataset.csv"
+from app.data_loader import load_tracks
 
 
 def build_v2_reason(row, genres, mood, seed_artists):
@@ -24,7 +20,7 @@ def build_v2_reason(row, genres, mood, seed_artists):
 
 
 def get_recommendations_v2(genres, mood, seed_artists, limit=5):
-    df = pd.read_csv(DATASET_PATH)
+    df = load_tracks()
 
     genres = [genre.lower() for genre in genres]
     mood = mood.lower()
@@ -40,12 +36,18 @@ def get_recommendations_v2(genres, mood, seed_artists, limit=5):
     df["mood_score"] = df["mood"].apply(lambda track_mood: 1 if track_mood == mood else 0)
     df["artist_score"] = df["artist"].apply(lambda artist: 1 if artist in seed_artists else 0)
     df["popularity_score"] = df["popularity"] / max_popularity
+    df["energy_score"] = df["energy"]
+    df["danceability_score"] = df["danceability"]
+    df["valence_score"] = df["valence"]
 
     df["score"] = (
-        0.35 * df["genre_score"]
-        + 0.35 * df["mood_score"]
-        + 0.20 * df["artist_score"]
+        0.30 * df["genre_score"]
+        + 0.25 * df["mood_score"]
+        + 0.15 * df["artist_score"]
         + 0.10 * df["popularity_score"]
+        + 0.10 * df["energy_score"]
+        + 0.05 * df["danceability_score"]
+        + 0.05 * df["valence_score"]
     )
 
     ranked_tracks = df.sort_values(by="score", ascending=False)
@@ -68,7 +70,7 @@ def apply_diversity_filter_v2(ranked_tracks, genres, mood, seed_artists, limit):
         if genre_count.get(genre, 0) >= 3:
             continue
 
-        recommendations.append({
+        recommendation = {
             "track": row["track"],
             "artist": row["artist"].title(),
             "genre": row["genre"],
@@ -76,9 +78,15 @@ def apply_diversity_filter_v2(ranked_tracks, genres, mood, seed_artists, limit):
             "tempo": int(row["tempo"]),
             "energy": float(row["energy"]),
             "popularity": int(row["popularity"]),
+            "danceability": float(row["danceability"]),
+            "valence": float(row["valence"]),
+            "release_year": int(row["release_year"]),
+            "spotify_url": row["spotify_url"],
             "score": round(float(row["score"]), 3),
             "reason": build_v2_reason(row, genres, mood, seed_artists),
-        })
+        }
+
+        recommendations.append(recommendation)
 
         artist_count[artist] = artist_count.get(artist, 0) + 1
         genre_count[genre] = genre_count.get(genre, 0) + 1
