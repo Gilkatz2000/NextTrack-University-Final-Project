@@ -94,7 +94,7 @@ try:
             response = requests.post(f"{API_URL}/recommend", json=payload, timeout=10)
             response.raise_for_status()
 
-            recommendations = response.json()["recommendations"][:5]
+            recommendations = response.json()["recommendations"][:10]
 
             st.subheader("Recommendations")
 

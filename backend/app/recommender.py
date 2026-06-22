@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
+from urllib.parse import quote_plus
 
 from app.data_loader import load_tracks
 
@@ -43,7 +44,7 @@ def build_recommendation_reason(track, genres, mood, seed_artists):
 
     return "Recommended because it " + ", ".join(selected_reasons) + "."
 
-def get_recommendations(genres, mood, seed_artists, limit=5):
+def get_recommendations(genres, mood, seed_artists, limit=10):
     df = load_tracks()
 
     genres = [g.lower() for g in genres]
@@ -166,8 +167,8 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
             ),
         }
 
-        if "spotify_url" in row:
-            recommendation["spotify_url"] = row["spotify_url"]
+        spotify_query = quote_plus(f"{row['track']} {row['artist']}")
+        recommendation["spotify_url"] = f"https://open.spotify.com/search/{spotify_query}"
 
         recommendations.append(recommendation)
 
