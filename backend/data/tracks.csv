@@ -1,251 +1,351 @@
-track,artist,genre,mood,tempo,energy,popularity,danceability,valence,release_year,spotify_url
-Mr Brightside,The Killers,rock,energetic,136,0.88,95,0.61,0.57,2003,https://open.spotify.com/search/Mr%20Brightside%20The%20Killers
-Somebody Told Me,The Killers,rock,energetic,143,0.85,72,0.63,0.64,2004,https://open.spotify.com/search/Somebody%20Told%20Me%20The%20Killers
-When You Were Young,The Killers,rock,nostalgic,94,0.58,88,0.56,0.49,2006,https://open.spotify.com/search/When%20You%20Were%20Young%20The%20Killers
-Human,The Killers,rock,happy,124,0.71,88,0.80,0.79,2008,https://open.spotify.com/search/Human%20The%20Killers
-Use Somebody,Kings of Leon,rock,romantic,90,0.57,74,0.56,0.51,2008,https://open.spotify.com/search/Use%20Somebody%20Kings%20of%20Leon
-Sex on Fire,Kings of Leon,rock,energetic,121,0.87,75,0.65,0.57,2008,https://open.spotify.com/search/Sex%20on%20Fire%20Kings%20of%20Leon
-Do I Wanna Know,Arctic Monkeys,rock,calm,79,0.33,72,0.41,0.51,2013,https://open.spotify.com/search/Do%20I%20Wanna%20Know%20Arctic%20Monkeys
-R U Mine?,Arctic Monkeys,rock,energetic,132,0.91,80,0.69,0.65,2013,https://open.spotify.com/search/R%20U%20Mine%3F%20Arctic%20Monkeys
-Fluorescent Adolescent,Arctic Monkeys,indie rock,energetic,128,0.86,75,0.64,0.70,2007,https://open.spotify.com/search/Fluorescent%20Adolescent%20Arctic%20Monkeys
-505,Arctic Monkeys,indie rock,sad,94,0.44,80,0.48,0.20,2007,https://open.spotify.com/search/505%20Arctic%20Monkeys
-Last Nite,The Strokes,indie rock,energetic,145,0.89,83,0.62,0.60,2001,https://open.spotify.com/search/Last%20Nite%20The%20Strokes
-Reptilia,The Strokes,indie rock,energetic,144,0.82,72,0.67,0.60,2003,https://open.spotify.com/search/Reptilia%20The%20Strokes
-Someday,The Strokes,indie rock,nostalgic,116,0.58,81,0.54,0.57,2001,https://open.spotify.com/search/Someday%20The%20Strokes
-Take Me Out,Franz Ferdinand,indie rock,energetic,131,0.87,78,0.73,0.64,2004,https://open.spotify.com/search/Take%20Me%20Out%20Franz%20Ferdinand
-Dog Days Are Over,Florence and the Machine,indie,energetic,120,0.86,90,0.71,0.66,2008,https://open.spotify.com/search/Dog%20Days%20Are%20Over%20Florence%20and%20the%20Machine
-Shake It Out,Florence and the Machine,indie,energetic,130,0.87,81,0.71,0.66,2011,https://open.spotify.com/search/Shake%20It%20Out%20Florence%20and%20the%20Machine
-Little Lion Man,Mumford & Sons,folk,energetic,123,0.72,71,0.62,0.62,2009,https://open.spotify.com/search/Little%20Lion%20Man%20Mumford%20%26%20Sons
-Ho Hey,The Lumineers,folk,happy,127,0.61,85,0.71,0.80,2012,https://open.spotify.com/search/Ho%20Hey%20The%20Lumineers
-Ophelia,The Lumineers,folk,happy,121,0.59,89,0.79,0.82,2016,https://open.spotify.com/search/Ophelia%20The%20Lumineers
-Pumped Up Kicks,Foster the People,indie pop,chill,94,0.49,82,0.63,0.51,2010,https://open.spotify.com/search/Pumped%20Up%20Kicks%20Foster%20the%20People
-Sit Next to Me,Foster the People,indie pop,happy,111,0.77,83,0.69,0.77,2017,https://open.spotify.com/search/Sit%20Next%20to%20Me%20Foster%20the%20People
-Electric Feel,MGMT,indie pop,chill,87,0.39,74,0.62,0.60,2007,https://open.spotify.com/search/Electric%20Feel%20MGMT
-Kids,MGMT,indie pop,energetic,134,0.85,86,0.75,0.61,2007,https://open.spotify.com/search/Kids%20MGMT
-Midnight City,M83,electronic,nostalgic,112,0.65,87,0.56,0.58,2011,https://open.spotify.com/search/Midnight%20City%20M83
-Sweet Disposition,The Temper Trap,indie rock,happy,109,0.71,71,0.75,0.81,2008,https://open.spotify.com/search/Sweet%20Disposition%20The%20Temper%20Trap
-Yellow,Coldplay,alternative,calm,86,0.30,89,0.41,0.58,2000,https://open.spotify.com/search/Yellow%20Coldplay
-Clocks,Coldplay,alternative,focus,100,0.43,81,0.39,0.42,2002,https://open.spotify.com/search/Clocks%20Coldplay
-Fix You,Coldplay,alternative,sad,84,0.43,90,0.46,0.17,2005,https://open.spotify.com/search/Fix%20You%20Coldplay
-Viva La Vida,Coldplay,pop,happy,116,0.69,93,0.67,0.81,2008,https://open.spotify.com/search/Viva%20La%20Vida%20Coldplay
-Paradise,Coldplay,pop,happy,120,0.78,73,0.66,0.82,2011,https://open.spotify.com/search/Paradise%20Coldplay
-The Scientist,Coldplay,alternative,sad,91,0.45,86,0.51,0.28,2002,https://open.spotify.com/search/The%20Scientist%20Coldplay
-Radioactive,Imagine Dragons,rock,energetic,133,0.84,87,0.62,0.70,2012,https://open.spotify.com/search/Radioactive%20Imagine%20Dragons
-Demons,Imagine Dragons,rock,sad,86,0.51,72,0.50,0.28,2012,https://open.spotify.com/search/Demons%20Imagine%20Dragons
-Believer,Imagine Dragons,rock,energetic,128,0.92,83,0.63,0.59,2017,https://open.spotify.com/search/Believer%20Imagine%20Dragons
-Thunder,Imagine Dragons,pop rock,energetic,127,0.86,82,0.64,0.67,2017,https://open.spotify.com/search/Thunder%20Imagine%20Dragons
-Boulevard of Broken Dreams,Green Day,rock,sad,99,0.50,86,0.44,0.29,2004,https://open.spotify.com/search/Boulevard%20of%20Broken%20Dreams%20Green%20Day
-American Idiot,Green Day,punk rock,energetic,146,0.95,85,0.73,0.67,2004,https://open.spotify.com/search/American%20Idiot%20Green%20Day
-Basket Case,Green Day,punk rock,energetic,145,0.92,75,0.67,0.66,1994,https://open.spotify.com/search/Basket%20Case%20Green%20Day
-Seven Nation Army,The White Stripes,rock,energetic,124,0.95,76,0.64,0.61,2003,https://open.spotify.com/search/Seven%20Nation%20Army%20The%20White%20Stripes
-Lonely Boy,The Black Keys,rock,energetic,146,0.88,70,0.70,0.63,2011,https://open.spotify.com/search/Lonely%20Boy%20The%20Black%20Keys
-Everlong,Foo Fighters,rock,energetic,140,0.90,67,0.61,0.65,1997,https://open.spotify.com/search/Everlong%20Foo%20Fighters
-Learn to Fly,Foo Fighters,rock,happy,127,0.81,69,0.73,0.88,1999,https://open.spotify.com/search/Learn%20to%20Fly%20Foo%20Fighters
-Smells Like Teen Spirit,Nirvana,grunge,energetic,120,0.85,84,0.75,0.65,1991,https://open.spotify.com/search/Smells%20Like%20Teen%20Spirit%20Nirvana
-Come As You Are,Nirvana,grunge,calm,76,0.34,68,0.42,0.54,1991,https://open.spotify.com/search/Come%20As%20You%20Are%20Nirvana
-Wonderwall,Oasis,britpop,nostalgic,104,0.49,91,0.59,0.57,1995,https://open.spotify.com/search/Wonderwall%20Oasis
-Champagne Supernova,Oasis,britpop,nostalgic,109,0.59,81,0.55,0.64,1995,https://open.spotify.com/search/Champagne%20Supernova%20Oasis
-Creep,Radiohead,alternative,sad,100,0.43,67,0.52,0.16,1992,https://open.spotify.com/search/Creep%20Radiohead
-Karma Police,Radiohead,alternative,sad,90,0.42,70,0.54,0.31,1997,https://open.spotify.com/search/Karma%20Police%20Radiohead
-High and Dry,Radiohead,alternative,sad,92,0.36,74,0.52,0.19,1995,https://open.spotify.com/search/High%20and%20Dry%20Radiohead
-Mr. Jones,Counting Crows,rock,happy,110,0.73,75,0.80,0.82,1993,https://open.spotify.com/search/Mr.%20Jones%20Counting%20Crows
-Iris,Goo Goo Dolls,rock,romantic,107,0.61,80,0.55,0.61,1998,https://open.spotify.com/search/Iris%20Goo%20Goo%20Dolls
-Blinding Lights,The Weeknd,pop,energetic,132,0.82,89,0.74,0.57,2019,https://open.spotify.com/search/Blinding%20Lights%20The%20Weeknd
-Save Your Tears,The Weeknd,pop,sad,82,0.43,95,0.42,0.28,2020,https://open.spotify.com/search/Save%20Your%20Tears%20The%20Weeknd
-Starboy,The Weeknd,r&b,cool,99,0.60,93,0.70,0.49,2016,https://open.spotify.com/search/Starboy%20The%20Weeknd
-Can’t Feel My Face,The Weeknd,pop,party,135,0.82,82,0.74,0.82,2015,https://open.spotify.com/search/Can%E2%80%99t%20Feel%20My%20Face%20The%20Weeknd
-Shape of You,Ed Sheeran,pop,happy,120,0.69,86,0.74,0.87,2017,https://open.spotify.com/search/Shape%20of%20You%20Ed%20Sheeran
-Perfect,Ed Sheeran,pop,romantic,98,0.51,84,0.55,0.60,2017,https://open.spotify.com/search/Perfect%20Ed%20Sheeran
-Thinking Out Loud,Ed Sheeran,pop,romantic,97,0.51,86,0.62,0.59,2014,https://open.spotify.com/search/Thinking%20Out%20Loud%20Ed%20Sheeran
-Bad Habits,Ed Sheeran,pop,energetic,125,0.91,82,0.69,0.70,2021,https://open.spotify.com/search/Bad%20Habits%20Ed%20Sheeran
-As It Was,Harry Styles,pop,nostalgic,94,0.59,78,0.56,0.50,2022,https://open.spotify.com/search/As%20It%20Was%20Harry%20Styles
-Watermelon Sugar,Harry Styles,pop,happy,112,0.74,79,0.70,0.82,2019,https://open.spotify.com/search/Watermelon%20Sugar%20Harry%20Styles
-Sign of the Times,Harry Styles,pop,sad,98,0.47,80,0.51,0.18,2017,https://open.spotify.com/search/Sign%20of%20the%20Times%20Harry%20Styles
-Levitating,Dua Lipa,pop,party,123,0.79,79,0.85,0.72,2020,https://open.spotify.com/search/Levitating%20Dua%20Lipa
-Don’t Start Now,Dua Lipa,pop,party,138,0.81,81,0.86,0.78,2019,https://open.spotify.com/search/Don%E2%80%99t%20Start%20Now%20Dua%20Lipa
-New Rules,Dua Lipa,pop,energetic,129,0.88,87,0.67,0.71,2017,https://open.spotify.com/search/New%20Rules%20Dua%20Lipa
-Dance The Night,Dua Lipa,pop,party,111,0.80,90,0.82,0.82,2023,https://open.spotify.com/search/Dance%20The%20Night%20Dua%20Lipa
-Anti-Hero,Taylor Swift,pop,sad,92,0.44,78,0.45,0.22,2022,https://open.spotify.com/search/Anti-Hero%20Taylor%20Swift
-Blank Space,Taylor Swift,pop,energetic,124,0.81,72,0.74,0.70,2014,https://open.spotify.com/search/Blank%20Space%20Taylor%20Swift
-Shake It Off,Taylor Swift,pop,happy,128,0.69,74,0.69,0.76,2014,https://open.spotify.com/search/Shake%20It%20Off%20Taylor%20Swift
-Style,Taylor Swift,pop,cool,109,0.66,82,0.77,0.54,2014,https://open.spotify.com/search/Style%20Taylor%20Swift
-Cruel Summer,Taylor Swift,pop,energetic,134,0.82,78,0.71,0.70,2019,https://open.spotify.com/search/Cruel%20Summer%20Taylor%20Swift
-Love Story,Taylor Swift,country pop,romantic,89,0.49,78,0.61,0.63,2008,https://open.spotify.com/search/Love%20Story%20Taylor%20Swift
-Rolling in the Deep,Adele,soul,angry,148,0.88,77,0.48,0.27,2010,https://open.spotify.com/search/Rolling%20in%20the%20Deep%20Adele
-Someone Like You,Adele,soul,sad,91,0.32,87,0.45,0.30,2011,https://open.spotify.com/search/Someone%20Like%20You%20Adele
-Hello,Adele,soul,sad,95,0.36,83,0.41,0.31,2015,https://open.spotify.com/search/Hello%20Adele
-Easy On Me,Adele,soul,sad,85,0.42,85,0.43,0.32,2021,https://open.spotify.com/search/Easy%20On%20Me%20Adele
-Uptown Funk,Mark Ronson,funk,party,116,0.84,75,0.80,0.78,2014,https://open.spotify.com/search/Uptown%20Funk%20Mark%20Ronson
-Happy,Pharrell Williams,pop,happy,134,0.69,70,0.66,0.88,2013,https://open.spotify.com/search/Happy%20Pharrell%20Williams
-Get Lucky,Daft Punk,electronic,party,115,0.90,84,0.81,0.79,2013,https://open.spotify.com/search/Get%20Lucky%20Daft%20Punk
-Locked Out of Heaven,Bruno Mars,pop,energetic,130,0.81,82,0.68,0.68,2012,https://open.spotify.com/search/Locked%20Out%20of%20Heaven%20Bruno%20Mars
-Just the Way You Are,Bruno Mars,pop,romantic,90,0.58,76,0.51,0.55,2010,https://open.spotify.com/search/Just%20the%20Way%20You%20Are%20Bruno%20Mars
-Treasure,Bruno Mars,funk,party,128,0.86,81,0.79,0.81,2012,https://open.spotify.com/search/Treasure%20Bruno%20Mars
-24K Magic,Bruno Mars,funk,party,110,0.88,84,0.83,0.83,2016,https://open.spotify.com/search/24K%20Magic%20Bruno%20Mars
-Flowers,Miley Cyrus,pop,happy,125,0.71,92,0.71,0.76,2023,https://open.spotify.com/search/Flowers%20Miley%20Cyrus
-Wrecking Ball,Miley Cyrus,pop,sad,85,0.44,84,0.45,0.21,2013,https://open.spotify.com/search/Wrecking%20Ball%20Miley%20Cyrus
-Party in the U.S.A.,Miley Cyrus,pop,party,110,0.78,80,0.79,0.74,2009,https://open.spotify.com/search/Party%20in%20the%20U.S.A.%20Miley%20Cyrus
-Roar,Katy Perry,pop,energetic,125,0.92,79,0.75,0.64,2013,https://open.spotify.com/search/Roar%20Katy%20Perry
-Firework,Katy Perry,pop,happy,115,0.69,78,0.66,0.78,2010,https://open.spotify.com/search/Firework%20Katy%20Perry
-Teenage Dream,Katy Perry,pop,romantic,98,0.52,78,0.47,0.53,2010,https://open.spotify.com/search/Teenage%20Dream%20Katy%20Perry
-Bad Romance,Lady Gaga,pop,energetic,134,0.90,79,0.66,0.57,2009,https://open.spotify.com/search/Bad%20Romance%20Lady%20Gaga
-Poker Face,Lady Gaga,pop,party,126,0.80,74,0.81,0.74,2008,https://open.spotify.com/search/Poker%20Face%20Lady%20Gaga
-Shallow,Lady Gaga,pop,sad,103,0.44,86,0.46,0.27,2018,https://open.spotify.com/search/Shallow%20Lady%20Gaga
-Havana,Camila Cabello,pop,party,118,0.85,80,0.83,0.78,2017,https://open.spotify.com/search/Havana%20Camila%20Cabello
-Senorita,Shawn Mendes,pop,romantic,109,0.47,92,0.57,0.63,2019,https://open.spotify.com/search/Senorita%20Shawn%20Mendes
-Stitches,Shawn Mendes,pop,sad,92,0.38,76,0.53,0.24,2015,https://open.spotify.com/search/Stitches%20Shawn%20Mendes
-Treat You Better,Shawn Mendes,pop,romantic,109,0.56,96,0.58,0.59,2016,https://open.spotify.com/search/Treat%20You%20Better%20Shawn%20Mendes
-Stay,The Kid LAROI,pop,energetic,122,0.83,79,0.66,0.55,2021,https://open.spotify.com/search/Stay%20The%20Kid%20LAROI
-Peaches,Justin Bieber,pop,chill,83,0.44,93,0.57,0.54,2021,https://open.spotify.com/search/Peaches%20Justin%20Bieber
-Sorry,Justin Bieber,pop,party,110,0.84,92,0.86,0.78,2015,https://open.spotify.com/search/Sorry%20Justin%20Bieber
-Love Yourself,Justin Bieber,pop,calm,89,0.39,91,0.51,0.43,2015,https://open.spotify.com/search/Love%20Yourself%20Justin%20Bieber
-What Do You Mean?,Justin Bieber,pop,party,117,0.79,82,0.85,0.71,2015,https://open.spotify.com/search/What%20Do%20You%20Mean%3F%20Justin%20Bieber
-drivers license,Olivia Rodrigo,pop,sad,91,0.39,78,0.54,0.26,2021,https://open.spotify.com/search/drivers%20license%20Olivia%20Rodrigo
-good 4 u,Olivia Rodrigo,pop rock,angry,147,0.88,96,0.57,0.28,2021,https://open.spotify.com/search/good%204%20u%20Olivia%20Rodrigo
-vampire,Olivia Rodrigo,pop,angry,135,0.84,85,0.57,0.27,2023,https://open.spotify.com/search/vampire%20Olivia%20Rodrigo
-bad guy,Billie Eilish,pop,cool,104,0.63,79,0.70,0.42,2019,https://open.spotify.com/search/bad%20guy%20Billie%20Eilish
-Ocean Eyes,Billie Eilish,pop,calm,82,0.36,90,0.47,0.53,2016,https://open.spotify.com/search/Ocean%20Eyes%20Billie%20Eilish
-Happier Than Ever,Billie Eilish,alternative,angry,154,0.88,85,0.56,0.29,2021,https://open.spotify.com/search/Happier%20Than%20Ever%20Billie%20Eilish
-Royals,Lorde,pop,cool,90,0.68,86,0.69,0.55,2013,https://open.spotify.com/search/Royals%20Lorde
-Green Light,Lorde,pop,energetic,126,0.92,82,0.63,0.62,2017,https://open.spotify.com/search/Green%20Light%20Lorde
-Team,Lorde,pop,cool,111,0.57,81,0.66,0.41,2013,https://open.spotify.com/search/Team%20Lorde
-Riptide,Vance Joy,folk pop,happy,120,0.68,81,0.79,0.88,2013,https://open.spotify.com/search/Riptide%20Vance%20Joy
-Budapest,George Ezra,folk pop,happy,120,0.69,70,0.65,0.89,2014,https://open.spotify.com/search/Budapest%20George%20Ezra
-Shotgun,George Ezra,folk pop,happy,117,0.77,89,0.77,0.86,2018,https://open.spotify.com/search/Shotgun%20George%20Ezra
-God’s Plan,Drake,hip hop,chill,106,0.43,86,0.57,0.52,2018,https://open.spotify.com/search/God%E2%80%99s%20Plan%20Drake
-Hotline Bling,Drake,r&b,chill,108,0.44,85,0.68,0.49,2015,https://open.spotify.com/search/Hotline%20Bling%20Drake
-One Dance,Drake,dancehall,party,121,0.79,78,0.87,0.71,2016,https://open.spotify.com/search/One%20Dance%20Drake
-Passionfruit,Drake,r&b,chill,90,0.38,79,0.58,0.54,2017,https://open.spotify.com/search/Passionfruit%20Drake
-Sicko Mode,Travis Scott,hip hop,energetic,136,0.81,84,0.62,0.66,2018,https://open.spotify.com/search/Sicko%20Mode%20Travis%20Scott
-goosebumps,Travis Scott,hip hop,dark,120,0.69,89,0.55,0.17,2016,https://open.spotify.com/search/goosebumps%20Travis%20Scott
-HUMBLE.,Kendrick Lamar,hip hop,energetic,136,0.91,93,0.75,0.68,2017,https://open.spotify.com/search/HUMBLE.%20Kendrick%20Lamar
-DNA.,Kendrick Lamar,hip hop,angry,127,0.89,90,0.59,0.29,2017,https://open.spotify.com/search/DNA.%20Kendrick%20Lamar
-Alright,Kendrick Lamar,hip hop,happy,130,0.73,93,0.73,0.77,2015,https://open.spotify.com/search/Alright%20Kendrick%20Lamar
-Lose Yourself,Eminem,hip hop,energetic,128,0.82,98,0.65,0.63,2002,https://open.spotify.com/search/Lose%20Yourself%20Eminem
-Without Me,Eminem,hip hop,party,118,0.79,82,0.82,0.80,2002,https://open.spotify.com/search/Without%20Me%20Eminem
-The Real Slim Shady,Eminem,hip hop,party,112,0.77,85,0.81,0.80,2000,https://open.spotify.com/search/The%20Real%20Slim%20Shady%20Eminem
-Stronger,Kanye West,hip hop,energetic,127,0.87,83,0.72,0.62,2007,https://open.spotify.com/search/Stronger%20Kanye%20West
-Gold Digger,Kanye West,hip hop,party,113,0.78,72,0.78,0.73,2005,https://open.spotify.com/search/Gold%20Digger%20Kanye%20West
-Heartless,Kanye West,hip hop,sad,101,0.40,70,0.43,0.22,2008,https://open.spotify.com/search/Heartless%20Kanye%20West
-Sunflower,Post Malone,hip hop,happy,118,0.75,88,0.73,0.82,2018,https://open.spotify.com/search/Sunflower%20Post%20Malone
-Circles,Post Malone,pop,sad,92,0.39,87,0.49,0.28,2019,https://open.spotify.com/search/Circles%20Post%20Malone
-Rockstar,Post Malone,hip hop,cool,108,0.58,82,0.76,0.48,2017,https://open.spotify.com/search/Rockstar%20Post%20Malone
-Congratulations,Post Malone,hip hop,happy,117,0.67,89,0.75,0.89,2016,https://open.spotify.com/search/Congratulations%20Post%20Malone
-Old Town Road,Lil Nas X,country rap,party,134,0.87,77,0.73,0.84,2019,https://open.spotify.com/search/Old%20Town%20Road%20Lil%20Nas%20X
-MONTERO,Lil Nas X,pop rap,party,133,0.81,91,0.88,0.82,2021,https://open.spotify.com/search/MONTERO%20Lil%20Nas%20X
-Industry Baby,Lil Nas X,hip hop,energetic,144,0.80,90,0.73,0.61,2021,https://open.spotify.com/search/Industry%20Baby%20Lil%20Nas%20X
-XO Tour Llif3,Lil Uzi Vert,hip hop,sad,81,0.48,92,0.42,0.20,2017,https://open.spotify.com/search/XO%20Tour%20Llif3%20Lil%20Uzi%20Vert
-Lucid Dreams,Juice WRLD,hip hop,sad,101,0.48,90,0.51,0.18,2018,https://open.spotify.com/search/Lucid%20Dreams%20Juice%20WRLD
-All Girls Are The Same,Juice WRLD,hip hop,sad,78,0.37,94,0.42,0.28,2018,https://open.spotify.com/search/All%20Girls%20Are%20The%20Same%20Juice%20WRLD
-See You Again,"Tyler, The Creator",hip hop,romantic,93,0.57,84,0.49,0.60,2017,https://open.spotify.com/search/See%20You%20Again%20Tyler%2C%20The%20Creator
-EARFQUAKE,"Tyler, The Creator",r&b,sad,99,0.37,85,0.42,0.23,2019,https://open.spotify.com/search/EARFQUAKE%20Tyler%2C%20The%20Creator
-No Role Modelz,J. Cole,hip hop,cool,101,0.62,89,0.66,0.49,2014,https://open.spotify.com/search/No%20Role%20Modelz%20J.%20Cole
-Middle Child,J. Cole,hip hop,energetic,146,0.80,86,0.64,0.64,2019,https://open.spotify.com/search/Middle%20Child%20J.%20Cole
-The Box,Roddy Ricch,hip hop,cool,103,0.64,83,0.66,0.54,2019,https://open.spotify.com/search/The%20Box%20Roddy%20Ricch
-Mood,24kGoldn,pop rap,happy,124,0.66,82,0.66,0.82,2020,https://open.spotify.com/search/Mood%2024kGoldn
-Savage,Megan Thee Stallion,hip hop,party,122,0.82,89,0.77,0.81,2020,https://open.spotify.com/search/Savage%20Megan%20Thee%20Stallion
-Bodak Yellow,Cardi B,hip hop,energetic,119,0.91,89,0.65,0.59,2017,https://open.spotify.com/search/Bodak%20Yellow%20Cardi%20B
-I Like It,Cardi B,hip hop,party,110,0.80,92,0.78,0.76,2018,https://open.spotify.com/search/I%20Like%20It%20Cardi%20B
-Truth Hurts,Lizzo,pop rap,happy,112,0.67,82,0.77,0.83,2017,https://open.spotify.com/search/Truth%20Hurts%20Lizzo
-Good as Hell,Lizzo,pop,happy,127,0.69,95,0.70,0.79,2016,https://open.spotify.com/search/Good%20as%20Hell%20Lizzo
-Redbone,Childish Gambino,r&b,chill,88,0.40,77,0.64,0.50,2016,https://open.spotify.com/search/Redbone%20Childish%20Gambino
-This Is America,Childish Gambino,hip hop,dark,109,0.75,95,0.45,0.14,2018,https://open.spotify.com/search/This%20Is%20America%20Childish%20Gambino
-Location,Khalid,r&b,chill,84,0.36,86,0.63,0.48,2016,https://open.spotify.com/search/Location%20Khalid
-Talk,Khalid,r&b,romantic,110,0.50,81,0.52,0.66,2019,https://open.spotify.com/search/Talk%20Khalid
-Young Dumb & Broke,Khalid,r&b,chill,95,0.42,88,0.62,0.55,2017,https://open.spotify.com/search/Young%20Dumb%20%26%20Broke%20Khalid
-Snooze,SZA,r&b,romantic,96,0.51,78,0.49,0.66,2022,https://open.spotify.com/search/Snooze%20SZA
-Kill Bill,SZA,r&b,dark,125,0.62,82,0.44,0.18,2022,https://open.spotify.com/search/Kill%20Bill%20SZA
-Good Days,SZA,r&b,chill,91,0.39,78,0.70,0.59,2020,https://open.spotify.com/search/Good%20Days%20SZA
-Leave The Door Open,Silk Sonic,soul,romantic,94,0.42,82,0.62,0.58,2021,https://open.spotify.com/search/Leave%20The%20Door%20Open%20Silk%20Sonic
-Smokin Out The Window,Silk Sonic,soul,sad,91,0.35,83,0.50,0.28,2021,https://open.spotify.com/search/Smokin%20Out%20The%20Window%20Silk%20Sonic
-No Scrubs,TLC,r&b,cool,91,0.61,66,0.63,0.52,1999,https://open.spotify.com/search/No%20Scrubs%20TLC
-Say My Name,Destiny’s Child,r&b,angry,131,0.87,83,0.48,0.18,1999,https://open.spotify.com/search/Say%20My%20Name%20Destiny%E2%80%99s%20Child
-Crazy in Love,Beyonce,r&b,party,137,0.75,78,0.83,0.74,2003,https://open.spotify.com/search/Crazy%20in%20Love%20Beyonce
-Halo,Beyonce,r&b,romantic,110,0.50,89,0.52,0.61,2008,https://open.spotify.com/search/Halo%20Beyonce
-Single Ladies,Beyonce,r&b,party,136,0.82,77,0.73,0.80,2008,https://open.spotify.com/search/Single%20Ladies%20Beyonce
-Love On Top,Beyonce,r&b,happy,119,0.62,78,0.77,0.86,2011,https://open.spotify.com/search/Love%20On%20Top%20Beyonce
-One More Time,Daft Punk,electronic,party,114,0.92,70,0.81,0.83,2000,https://open.spotify.com/search/One%20More%20Time%20Daft%20Punk
-Harder Better Faster Stronger,Daft Punk,electronic,energetic,141,0.95,89,0.72,0.67,2001,https://open.spotify.com/search/Harder%20Better%20Faster%20Stronger%20Daft%20Punk
-Around the World,Daft Punk,electronic,party,123,0.84,83,0.86,0.84,1997,https://open.spotify.com/search/Around%20the%20World%20Daft%20Punk
-Wake Me Up,Avicii,edm,happy,127,0.75,72,0.69,0.78,2013,https://open.spotify.com/search/Wake%20Me%20Up%20Avicii
-Levels,Avicii,edm,party,125,0.92,83,0.76,0.78,2011,https://open.spotify.com/search/Levels%20Avicii
-The Nights,Avicii,edm,happy,113,0.85,73,0.66,0.91,2014,https://open.spotify.com/search/The%20Nights%20Avicii
-Hey Brother,Avicii,edm,happy,133,0.79,74,0.68,0.91,2013,https://open.spotify.com/search/Hey%20Brother%20Avicii
-Titanium,David Guetta,edm,energetic,137,0.93,73,0.72,0.65,2011,https://open.spotify.com/search/Titanium%20David%20Guetta
-Memories,David Guetta,edm,party,118,0.93,78,0.77,0.75,2009,https://open.spotify.com/search/Memories%20David%20Guetta
-Without You,David Guetta,edm,sad,85,0.53,74,0.44,0.19,2011,https://open.spotify.com/search/Without%20You%20David%20Guetta
-Animals,Martin Garrix,edm,energetic,123,0.91,78,0.61,0.70,2013,https://open.spotify.com/search/Animals%20Martin%20Garrix
-Scared to Be Lonely,Martin Garrix,edm,sad,84,0.56,96,0.53,0.24,2017,https://open.spotify.com/search/Scared%20to%20Be%20Lonely%20Martin%20Garrix
-In the Name of Love,Martin Garrix,edm,romantic,84,0.60,83,0.61,0.51,2016,https://open.spotify.com/search/In%20the%20Name%20of%20Love%20Martin%20Garrix
-Closer,The Chainsmokers,edm,romantic,85,0.64,79,0.52,0.65,2016,https://open.spotify.com/search/Closer%20The%20Chainsmokers
-Something Just Like This,The Chainsmokers,edm,happy,129,0.75,78,0.68,0.85,2017,https://open.spotify.com/search/Something%20Just%20Like%20This%20The%20Chainsmokers
-Don’t Let Me Down,The Chainsmokers,edm,sad,91,0.48,76,0.44,0.30,2016,https://open.spotify.com/search/Don%E2%80%99t%20Let%20Me%20Down%20The%20Chainsmokers
-Roses,The Chainsmokers,edm,romantic,101,0.55,87,0.50,0.60,2015,https://open.spotify.com/search/Roses%20The%20Chainsmokers
-Lean On,Major Lazer,dance,party,138,0.86,96,0.74,0.71,2015,https://open.spotify.com/search/Lean%20On%20Major%20Lazer
-Cold Water,Major Lazer,dance,chill,105,0.56,87,0.64,0.60,2016,https://open.spotify.com/search/Cold%20Water%20Major%20Lazer
-Rather Be,Clean Bandit,dance,happy,112,0.74,87,0.78,0.80,2014,https://open.spotify.com/search/Rather%20Be%20Clean%20Bandit
-Rockabye,Clean Bandit,dance,sad,100,0.48,80,0.51,0.23,2016,https://open.spotify.com/search/Rockabye%20Clean%20Bandit
-Latch,Disclosure,electronic,romantic,89,0.59,83,0.58,0.51,2012,https://open.spotify.com/search/Latch%20Disclosure
-You & Me,Disclosure,electronic,romantic,96,0.63,88,0.48,0.61,2013,https://open.spotify.com/search/You%20%26%20Me%20Disclosure
-Sweet Nothing,Calvin Harris,edm,party,111,0.95,81,0.85,0.77,2012,https://open.spotify.com/search/Sweet%20Nothing%20Calvin%20Harris
-Summer,Calvin Harris,edm,happy,117,0.82,83,0.80,0.81,2014,https://open.spotify.com/search/Summer%20Calvin%20Harris
-Feel So Close,Calvin Harris,edm,happy,129,0.85,81,0.71,0.82,2011,https://open.spotify.com/search/Feel%20So%20Close%20Calvin%20Harris
-This Is What You Came For,Calvin Harris,edm,party,110,0.90,96,0.82,0.73,2016,https://open.spotify.com/search/This%20Is%20What%20You%20Came%20For%20Calvin%20Harris
-We Found Love,Rihanna,dance,party,126,0.92,86,0.88,0.76,2011,https://open.spotify.com/search/We%20Found%20Love%20Rihanna
-Where Have You Been,Rihanna,dance,party,115,0.84,72,0.76,0.76,2011,https://open.spotify.com/search/Where%20Have%20You%20Been%20Rihanna
-Firestone,Kygo,tropical house,romantic,107,0.47,76,0.62,0.58,2014,https://open.spotify.com/search/Firestone%20Kygo
-Stole the Show,Kygo,tropical house,happy,107,0.70,86,0.80,0.88,2015,https://open.spotify.com/search/Stole%20the%20Show%20Kygo
-It Ain’t Me,Kygo,tropical house,sad,89,0.37,95,0.54,0.31,2017,https://open.spotify.com/search/It%20Ain%E2%80%99t%20Me%20Kygo
-Faded,Alan Walker,edm,sad,96,0.52,95,0.54,0.30,2015,https://open.spotify.com/search/Faded%20Alan%20Walker
-Alone,Alan Walker,edm,sad,101,0.49,82,0.43,0.30,2016,https://open.spotify.com/search/Alone%20Alan%20Walker
-Better Off Alone,Alice Deejay,dance,party,114,0.83,68,0.79,0.85,1999,https://open.spotify.com/search/Better%20Off%20Alone%20Alice%20Deejay
-Sandstorm,Darude,trance,energetic,143,0.83,81,0.61,0.67,1999,https://open.spotify.com/search/Sandstorm%20Darude
-Blue,Eiffel 65,dance,party,129,0.92,76,0.78,0.81,1998,https://open.spotify.com/search/Blue%20Eiffel%2065
-Billie Jean,Michael Jackson,pop,party,128,0.83,85,0.78,0.79,1982,https://open.spotify.com/search/Billie%20Jean%20Michael%20Jackson
-Beat It,Michael Jackson,pop rock,energetic,129,0.84,80,0.66,0.59,1982,https://open.spotify.com/search/Beat%20It%20Michael%20Jackson
-Thriller,Michael Jackson,pop,dark,115,0.69,71,0.50,0.12,1982,https://open.spotify.com/search/Thriller%20Michael%20Jackson
-Man in the Mirror,Michael Jackson,pop,sad,101,0.41,79,0.53,0.26,1987,https://open.spotify.com/search/Man%20in%20the%20Mirror%20Michael%20Jackson
-Like a Prayer,Madonna,pop,happy,116,0.71,78,0.71,0.76,1989,https://open.spotify.com/search/Like%20a%20Prayer%20Madonna
-Material Girl,Madonna,pop,party,111,0.82,74,0.75,0.81,1984,https://open.spotify.com/search/Material%20Girl%20Madonna
-Vogue,Madonna,pop,party,112,0.85,76,0.81,0.78,1990,https://open.spotify.com/search/Vogue%20Madonna
-Take On Me,a-ha,synthpop,happy,107,0.74,83,0.66,0.88,1985,https://open.spotify.com/search/Take%20On%20Me%20a-ha
-Everybody Wants to Rule the World,Tears for Fears,synthpop,nostalgic,96,0.58,79,0.65,0.61,1985,https://open.spotify.com/search/Everybody%20Wants%20to%20Rule%20the%20World%20Tears%20for%20Fears
-Sweet Dreams,Eurythmics,synthpop,cool,112,0.59,71,0.73,0.53,1983,https://open.spotify.com/search/Sweet%20Dreams%20Eurythmics
-Don’t Stop Believin’,Journey,rock,happy,127,0.71,91,0.68,0.81,1981,https://open.spotify.com/search/Don%E2%80%99t%20Stop%20Believin%E2%80%99%20Journey
-Livin’ on a Prayer,Bon Jovi,rock,energetic,122,0.87,79,0.68,0.68,1986,https://open.spotify.com/search/Livin%E2%80%99%20on%20a%20Prayer%20Bon%20Jovi
-Sweet Child O’ Mine,Guns N’ Roses,rock,energetic,132,0.86,65,0.65,0.59,1987,https://open.spotify.com/search/Sweet%20Child%20O%E2%80%99%20Mine%20Guns%20N%E2%80%99%20Roses
-November Rain,Guns N’ Roses,rock,sad,96,0.42,74,0.44,0.22,1991,https://open.spotify.com/search/November%20Rain%20Guns%20N%E2%80%99%20Roses
-Bohemian Rhapsody,Queen,rock,dramatic,104,0.75,84,0.36,0.35,1975,https://open.spotify.com/search/Bohemian%20Rhapsody%20Queen
-Don’t Stop Me Now,Queen,rock,happy,133,0.71,76,0.72,0.89,1978,https://open.spotify.com/search/Don%E2%80%99t%20Stop%20Me%20Now%20Queen
-Another One Bites the Dust,Queen,rock,cool,93,0.67,84,0.78,0.54,1980,https://open.spotify.com/search/Another%20One%20Bites%20the%20Dust%20Queen
-Under Pressure,Queen,rock,dramatic,92,0.74,75,0.40,0.44,1981,https://open.spotify.com/search/Under%20Pressure%20Queen
-Hotel California,Eagles,rock,nostalgic,112,0.60,73,0.56,0.54,1976,https://open.spotify.com/search/Hotel%20California%20Eagles
-Dreams,Fleetwood Mac,rock,chill,90,0.50,69,0.65,0.62,1977,https://open.spotify.com/search/Dreams%20Fleetwood%20Mac
-Go Your Own Way,Fleetwood Mac,rock,energetic,134,0.92,70,0.71,0.71,1977,https://open.spotify.com/search/Go%20Your%20Own%20Way%20Fleetwood%20Mac
-Africa,Toto,rock,nostalgic,97,0.62,84,0.54,0.60,1982,https://open.spotify.com/search/Africa%20Toto
-More Than a Feeling,Boston,rock,happy,131,0.75,67,0.67,0.83,1976,https://open.spotify.com/search/More%20Than%20a%20Feeling%20Boston
-Stairway to Heaven,Led Zeppelin,rock,dramatic,84,0.71,69,0.43,0.33,1971,https://open.spotify.com/search/Stairway%20to%20Heaven%20Led%20Zeppelin
-Immigrant Song,Led Zeppelin,rock,energetic,124,0.85,78,0.69,0.61,1970,https://open.spotify.com/search/Immigrant%20Song%20Led%20Zeppelin
-Paint It Black,The Rolling Stones,rock,dark,121,0.70,60,0.45,0.18,1966,https://open.spotify.com/search/Paint%20It%20Black%20The%20Rolling%20Stones
-Start Me Up,The Rolling Stones,rock,energetic,122,0.95,84,0.62,0.59,1981,https://open.spotify.com/search/Start%20Me%20Up%20The%20Rolling%20Stones
-Come Together,The Beatles,rock,cool,98,0.62,60,0.75,0.51,1969,https://open.spotify.com/search/Come%20Together%20The%20Beatles
-Hey Jude,The Beatles,rock,happy,131,0.71,78,0.75,0.88,1968,https://open.spotify.com/search/Hey%20Jude%20The%20Beatles
-Let It Be,The Beatles,rock,sad,99,0.45,60,0.44,0.31,1970,https://open.spotify.com/search/Let%20It%20Be%20The%20Beatles
-Here Comes the Sun,The Beatles,rock,happy,117,0.71,61,0.69,0.84,1969,https://open.spotify.com/search/Here%20Comes%20the%20Sun%20The%20Beatles
-Imagine,John Lennon,soft rock,calm,91,0.32,66,0.50,0.44,1971,https://open.spotify.com/search/Imagine%20John%20Lennon
-Rocket Man,Elton John,soft rock,sad,95,0.31,80,0.48,0.19,1972,https://open.spotify.com/search/Rocket%20Man%20Elton%20John
-Your Song,Elton John,soft rock,romantic,98,0.44,80,0.48,0.60,1970,https://open.spotify.com/search/Your%20Song%20Elton%20John
-Tiny Dancer,Elton John,soft rock,nostalgic,113,0.43,60,0.60,0.62,1971,https://open.spotify.com/search/Tiny%20Dancer%20Elton%20John
-Piano Man,Billy Joel,soft rock,nostalgic,117,0.47,80,0.50,0.55,1973,https://open.spotify.com/search/Piano%20Man%20Billy%20Joel
-Uptown Girl,Billy Joel,pop rock,happy,109,0.71,65,0.69,0.79,1983,https://open.spotify.com/search/Uptown%20Girl%20Billy%20Joel
-Dancing Queen,ABBA,pop,party,136,0.77,76,0.88,0.84,1976,https://open.spotify.com/search/Dancing%20Queen%20ABBA
-Mamma Mia,ABBA,pop,happy,122,0.75,76,0.72,0.79,1975,https://open.spotify.com/search/Mamma%20Mia%20ABBA
-Take a Chance on Me,ABBA,pop,happy,132,0.78,62,0.79,0.80,1977,https://open.spotify.com/search/Take%20a%20Chance%20on%20Me%20ABBA
-Stayin’ Alive,Bee Gees,disco,party,117,0.87,66,0.77,0.70,1977,https://open.spotify.com/search/Stayin%E2%80%99%20Alive%20Bee%20Gees
-September,Earth Wind & Fire,funk,happy,115,0.77,70,0.79,0.87,1978,https://open.spotify.com/search/September%20Earth%20Wind%20%26%20Fire
-Superstition,Stevie Wonder,funk,cool,114,0.63,77,0.77,0.46,1972,https://open.spotify.com/search/Superstition%20Stevie%20Wonder
-Isn’t She Lovely,Stevie Wonder,soul,happy,126,0.67,73,0.79,0.88,1976,https://open.spotify.com/search/Isn%E2%80%99t%20She%20Lovely%20Stevie%20Wonder
-I Will Survive,Gloria Gaynor,disco,happy,131,0.77,72,0.78,0.79,1978,https://open.spotify.com/search/I%20Will%20Survive%20Gloria%20Gaynor
-Girls Just Want to Have Fun,Cyndi Lauper,pop,party,136,0.83,64,0.75,0.71,1983,https://open.spotify.com/search/Girls%20Just%20Want%20to%20Have%20Fun%20Cyndi%20Lauper
-Time After Time,Cyndi Lauper,pop,romantic,89,0.47,64,0.63,0.60,1983,https://open.spotify.com/search/Time%20After%20Time%20Cyndi%20Lauper
-Careless Whisper,George Michael,pop,romantic,102,0.46,66,0.48,0.52,1984,https://open.spotify.com/search/Careless%20Whisper%20George%20Michael
+track,artist,genre,mood,tempo,energy,popularity,danceability,valence,release_year
+Mr Brightside,The Killers,rock,energetic,136,0.88,95,0.61,0.57,2003
+Somebody Told Me,The Killers,rock,energetic,143,0.85,72,0.63,0.64,2004
+When You Were Young,The Killers,rock,nostalgic,94,0.58,88,0.56,0.49,2006
+Human,The Killers,rock,happy,124,0.71,88,0.8,0.79,2008
+Use Somebody,Kings of Leon,rock,romantic,90,0.57,74,0.56,0.51,2008
+Sex on Fire,Kings of Leon,rock,energetic,121,0.87,75,0.65,0.57,2008
+Do I Wanna Know,Arctic Monkeys,rock,calm,79,0.33,72,0.41,0.51,2013
+R U Mine?,Arctic Monkeys,rock,energetic,132,0.91,80,0.69,0.65,2013
+Fluorescent Adolescent,Arctic Monkeys,indie rock,energetic,128,0.86,75,0.64,0.7,2007
+505,Arctic Monkeys,indie rock,sad,94,0.44,80,0.48,0.2,2007
+Last Nite,The Strokes,indie rock,energetic,145,0.89,83,0.62,0.6,2001
+Reptilia,The Strokes,indie rock,energetic,144,0.82,72,0.67,0.6,2003
+Someday,The Strokes,indie rock,nostalgic,116,0.58,81,0.54,0.57,2001
+Take Me Out,Franz Ferdinand,indie rock,energetic,131,0.87,78,0.73,0.64,2004
+Dog Days Are Over,Florence and the Machine,indie,energetic,120,0.86,90,0.71,0.66,2008
+Shake It Out,Florence and the Machine,indie,energetic,130,0.87,81,0.71,0.66,2011
+Little Lion Man,Mumford & Sons,folk,energetic,123,0.72,71,0.62,0.62,2009
+Ho Hey,The Lumineers,folk,happy,127,0.61,85,0.71,0.8,2012
+Ophelia,The Lumineers,folk,happy,121,0.59,89,0.79,0.82,2016
+Pumped Up Kicks,Foster the People,indie pop,chill,94,0.49,82,0.63,0.51,2010
+Sit Next to Me,Foster the People,indie pop,happy,111,0.77,83,0.69,0.77,2017
+Electric Feel,MGMT,indie pop,chill,87,0.39,74,0.62,0.6,2007
+Kids,MGMT,indie pop,energetic,134,0.85,86,0.75,0.61,2007
+Midnight City,M83,electronic,nostalgic,112,0.65,87,0.56,0.58,2011
+Sweet Disposition,The Temper Trap,indie rock,happy,109,0.71,71,0.75,0.81,2008
+Yellow,Coldplay,alternative,calm,86,0.3,89,0.41,0.58,2000
+Clocks,Coldplay,alternative,focus,100,0.43,81,0.39,0.42,2002
+Fix You,Coldplay,alternative,sad,84,0.43,90,0.46,0.17,2005
+Viva La Vida,Coldplay,pop,happy,116,0.69,93,0.67,0.81,2008
+Paradise,Coldplay,pop,happy,120,0.78,73,0.66,0.82,2011
+The Scientist,Coldplay,alternative,sad,91,0.45,86,0.51,0.28,2002
+Radioactive,Imagine Dragons,rock,energetic,133,0.84,87,0.62,0.7,2012
+Demons,Imagine Dragons,rock,sad,86,0.51,72,0.5,0.28,2012
+Believer,Imagine Dragons,rock,energetic,128,0.92,83,0.63,0.59,2017
+Thunder,Imagine Dragons,pop rock,energetic,127,0.86,82,0.64,0.67,2017
+Boulevard of Broken Dreams,Green Day,rock,sad,99,0.5,86,0.44,0.29,2004
+American Idiot,Green Day,punk rock,energetic,146,0.95,85,0.73,0.67,2004
+Basket Case,Green Day,punk rock,energetic,145,0.92,75,0.67,0.66,1994
+Seven Nation Army,The White Stripes,rock,energetic,124,0.95,76,0.64,0.61,2003
+Lonely Boy,The Black Keys,rock,energetic,146,0.88,70,0.7,0.63,2011
+Everlong,Foo Fighters,rock,energetic,140,0.9,67,0.61,0.65,1997
+Learn to Fly,Foo Fighters,rock,happy,127,0.81,69,0.73,0.88,1999
+Smells Like Teen Spirit,Nirvana,grunge,energetic,120,0.85,84,0.75,0.65,1991
+Come As You Are,Nirvana,grunge,calm,76,0.34,68,0.42,0.54,1991
+Wonderwall,Oasis,britpop,nostalgic,104,0.49,91,0.59,0.57,1995
+Champagne Supernova,Oasis,britpop,nostalgic,109,0.59,81,0.55,0.64,1995
+Creep,Radiohead,alternative,sad,100,0.43,67,0.52,0.16,1992
+Karma Police,Radiohead,alternative,sad,90,0.42,70,0.54,0.31,1997
+High and Dry,Radiohead,alternative,sad,92,0.36,74,0.52,0.19,1995
+Mr. Jones,Counting Crows,rock,happy,110,0.73,75,0.8,0.82,1993
+Iris,Goo Goo Dolls,rock,romantic,107,0.61,80,0.55,0.61,1998
+Blinding Lights,The Weeknd,pop,energetic,132,0.82,89,0.74,0.57,2019
+Save Your Tears,The Weeknd,pop,sad,82,0.43,95,0.42,0.28,2020
+Starboy,The Weeknd,r&b,cool,99,0.6,93,0.7,0.49,2016
+Can’t Feel My Face,The Weeknd,pop,party,135,0.82,82,0.74,0.82,2015
+Shape of You,Ed Sheeran,pop,happy,120,0.69,86,0.74,0.87,2017
+Perfect,Ed Sheeran,pop,romantic,98,0.51,84,0.55,0.6,2017
+Thinking Out Loud,Ed Sheeran,pop,romantic,97,0.51,86,0.62,0.59,2014
+Bad Habits,Ed Sheeran,pop,energetic,125,0.91,82,0.69,0.7,2021
+As It Was,Harry Styles,pop,nostalgic,94,0.59,78,0.56,0.5,2022
+Watermelon Sugar,Harry Styles,pop,happy,112,0.74,79,0.7,0.82,2019
+Sign of the Times,Harry Styles,pop,sad,98,0.47,80,0.51,0.18,2017
+Levitating,Dua Lipa,pop,party,123,0.79,79,0.85,0.72,2020
+Don’t Start Now,Dua Lipa,pop,party,138,0.81,81,0.86,0.78,2019
+New Rules,Dua Lipa,pop,energetic,129,0.88,87,0.67,0.71,2017
+Dance The Night,Dua Lipa,pop,party,111,0.8,90,0.82,0.82,2023
+Anti-Hero,Taylor Swift,pop,sad,92,0.44,78,0.45,0.22,2022
+Blank Space,Taylor Swift,pop,energetic,124,0.81,72,0.74,0.7,2014
+Shake It Off,Taylor Swift,pop,happy,128,0.69,74,0.69,0.76,2014
+Style,Taylor Swift,pop,cool,109,0.66,82,0.77,0.54,2014
+Cruel Summer,Taylor Swift,pop,energetic,134,0.82,78,0.71,0.7,2019
+Love Story,Taylor Swift,country pop,romantic,89,0.49,78,0.61,0.63,2008
+Rolling in the Deep,Adele,soul,angry,148,0.88,77,0.48,0.27,2010
+Someone Like You,Adele,soul,sad,91,0.32,87,0.45,0.3,2011
+Hello,Adele,soul,sad,95,0.36,83,0.41,0.31,2015
+Easy On Me,Adele,soul,sad,85,0.42,85,0.43,0.32,2021
+Uptown Funk,Mark Ronson,funk,party,116,0.84,75,0.8,0.78,2014
+Happy,Pharrell Williams,pop,happy,134,0.69,70,0.66,0.88,2013
+Get Lucky,Daft Punk,electronic,party,115,0.9,84,0.81,0.79,2013
+Locked Out of Heaven,Bruno Mars,pop,energetic,130,0.81,82,0.68,0.68,2012
+Just the Way You Are,Bruno Mars,pop,romantic,90,0.58,76,0.51,0.55,2010
+Treasure,Bruno Mars,funk,party,128,0.86,81,0.79,0.81,2012
+24K Magic,Bruno Mars,funk,party,110,0.88,84,0.83,0.83,2016
+Flowers,Miley Cyrus,pop,happy,125,0.71,92,0.71,0.76,2023
+Wrecking Ball,Miley Cyrus,pop,sad,85,0.44,84,0.45,0.21,2013
+Party in the U.S.A.,Miley Cyrus,pop,party,110,0.78,80,0.79,0.74,2009
+Roar,Katy Perry,pop,energetic,125,0.92,79,0.75,0.64,2013
+Firework,Katy Perry,pop,happy,115,0.69,78,0.66,0.78,2010
+Teenage Dream,Katy Perry,pop,romantic,98,0.52,78,0.47,0.53,2010
+Bad Romance,Lady Gaga,pop,energetic,134,0.9,79,0.66,0.57,2009
+Poker Face,Lady Gaga,pop,party,126,0.8,74,0.81,0.74,2008
+Shallow,Lady Gaga,pop,sad,103,0.44,86,0.46,0.27,2018
+Havana,Camila Cabello,pop,party,118,0.85,80,0.83,0.78,2017
+Senorita,Shawn Mendes,pop,romantic,109,0.47,92,0.57,0.63,2019
+Stitches,Shawn Mendes,pop,sad,92,0.38,76,0.53,0.24,2015
+Treat You Better,Shawn Mendes,pop,romantic,109,0.56,96,0.58,0.59,2016
+Stay,The Kid LAROI,pop,energetic,122,0.83,79,0.66,0.55,2021
+Peaches,Justin Bieber,pop,chill,83,0.44,93,0.57,0.54,2021
+Sorry,Justin Bieber,pop,party,110,0.84,92,0.86,0.78,2015
+Love Yourself,Justin Bieber,pop,calm,89,0.39,91,0.51,0.43,2015
+What Do You Mean?,Justin Bieber,pop,party,117,0.79,82,0.85,0.71,2015
+drivers license,Olivia Rodrigo,pop,sad,91,0.39,78,0.54,0.26,2021
+good 4 u,Olivia Rodrigo,pop rock,angry,147,0.88,96,0.57,0.28,2021
+vampire,Olivia Rodrigo,pop,angry,135,0.84,85,0.57,0.27,2023
+bad guy,Billie Eilish,pop,cool,104,0.63,79,0.7,0.42,2019
+Ocean Eyes,Billie Eilish,pop,calm,82,0.36,90,0.47,0.53,2016
+Happier Than Ever,Billie Eilish,alternative,angry,154,0.88,85,0.56,0.29,2021
+Royals,Lorde,pop,cool,90,0.68,86,0.69,0.55,2013
+Green Light,Lorde,pop,energetic,126,0.92,82,0.63,0.62,2017
+Team,Lorde,pop,cool,111,0.57,81,0.66,0.41,2013
+Riptide,Vance Joy,folk pop,happy,120,0.68,81,0.79,0.88,2013
+Budapest,George Ezra,folk pop,happy,120,0.69,70,0.65,0.89,2014
+Shotgun,George Ezra,folk pop,happy,117,0.77,89,0.77,0.86,2018
+God’s Plan,Drake,hip hop,chill,106,0.43,86,0.57,0.52,2018
+Hotline Bling,Drake,r&b,chill,108,0.44,85,0.68,0.49,2015
+One Dance,Drake,dancehall,party,121,0.79,78,0.87,0.71,2016
+Passionfruit,Drake,r&b,chill,90,0.38,79,0.58,0.54,2017
+Sicko Mode,Travis Scott,hip hop,energetic,136,0.81,84,0.62,0.66,2018
+goosebumps,Travis Scott,hip hop,dark,120,0.69,89,0.55,0.17,2016
+HUMBLE.,Kendrick Lamar,hip hop,energetic,136,0.91,93,0.75,0.68,2017
+DNA.,Kendrick Lamar,hip hop,angry,127,0.89,90,0.59,0.29,2017
+Alright,Kendrick Lamar,hip hop,happy,130,0.73,93,0.73,0.77,2015
+Lose Yourself,Eminem,hip hop,energetic,128,0.82,98,0.65,0.63,2002
+Without Me,Eminem,hip hop,party,118,0.79,82,0.82,0.8,2002
+The Real Slim Shady,Eminem,hip hop,party,112,0.77,85,0.81,0.8,2000
+Stronger,Kanye West,hip hop,energetic,127,0.87,83,0.72,0.62,2007
+Gold Digger,Kanye West,hip hop,party,113,0.78,72,0.78,0.73,2005
+Heartless,Kanye West,hip hop,sad,101,0.4,70,0.43,0.22,2008
+Sunflower,Post Malone,hip hop,happy,118,0.75,88,0.73,0.82,2018
+Circles,Post Malone,pop,sad,92,0.39,87,0.49,0.28,2019
+Rockstar,Post Malone,hip hop,cool,108,0.58,82,0.76,0.48,2017
+Congratulations,Post Malone,hip hop,happy,117,0.67,89,0.75,0.89,2016
+Old Town Road,Lil Nas X,country rap,party,134,0.87,77,0.73,0.84,2019
+MONTERO,Lil Nas X,pop rap,party,133,0.81,91,0.88,0.82,2021
+Industry Baby,Lil Nas X,hip hop,energetic,144,0.8,90,0.73,0.61,2021
+XO Tour Llif3,Lil Uzi Vert,hip hop,sad,81,0.48,92,0.42,0.2,2017
+Lucid Dreams,Juice WRLD,hip hop,sad,101,0.48,90,0.51,0.18,2018
+All Girls Are The Same,Juice WRLD,hip hop,sad,78,0.37,94,0.42,0.28,2018
+See You Again,"Tyler, The Creator",hip hop,romantic,93,0.57,84,0.49,0.6,2017
+EARFQUAKE,"Tyler, The Creator",r&b,sad,99,0.37,85,0.42,0.23,2019
+No Role Modelz,J. Cole,hip hop,cool,101,0.62,89,0.66,0.49,2014
+Middle Child,J. Cole,hip hop,energetic,146,0.8,86,0.64,0.64,2019
+The Box,Roddy Ricch,hip hop,cool,103,0.64,83,0.66,0.54,2019
+Mood,24kGoldn,pop rap,happy,124,0.66,82,0.66,0.82,2020
+Savage,Megan Thee Stallion,hip hop,party,122,0.82,89,0.77,0.81,2020
+Bodak Yellow,Cardi B,hip hop,energetic,119,0.91,89,0.65,0.59,2017
+I Like It,Cardi B,hip hop,party,110,0.8,92,0.78,0.76,2018
+Truth Hurts,Lizzo,pop rap,happy,112,0.67,82,0.77,0.83,2017
+Good as Hell,Lizzo,pop,happy,127,0.69,95,0.7,0.79,2016
+Redbone,Childish Gambino,r&b,chill,88,0.4,77,0.64,0.5,2016
+This Is America,Childish Gambino,hip hop,dark,109,0.75,95,0.45,0.14,2018
+Location,Khalid,r&b,chill,84,0.36,86,0.63,0.48,2016
+Talk,Khalid,r&b,romantic,110,0.5,81,0.52,0.66,2019
+Young Dumb & Broke,Khalid,r&b,chill,95,0.42,88,0.62,0.55,2017
+Snooze,SZA,r&b,romantic,96,0.51,78,0.49,0.66,2022
+Kill Bill,SZA,r&b,dark,125,0.62,82,0.44,0.18,2022
+Good Days,SZA,r&b,chill,91,0.39,78,0.7,0.59,2020
+Leave The Door Open,Silk Sonic,soul,romantic,94,0.42,82,0.62,0.58,2021
+Smokin Out The Window,Silk Sonic,soul,sad,91,0.35,83,0.5,0.28,2021
+No Scrubs,TLC,r&b,cool,91,0.61,66,0.63,0.52,1999
+Say My Name,Destiny’s Child,r&b,angry,131,0.87,83,0.48,0.18,1999
+Crazy in Love,Beyonce,r&b,party,137,0.75,78,0.83,0.74,2003
+Halo,Beyonce,r&b,romantic,110,0.5,89,0.52,0.61,2008
+Single Ladies,Beyonce,r&b,party,136,0.82,77,0.73,0.8,2008
+Love On Top,Beyonce,r&b,happy,119,0.62,78,0.77,0.86,2011
+One More Time,Daft Punk,electronic,party,114,0.92,70,0.81,0.83,2000
+Harder Better Faster Stronger,Daft Punk,electronic,energetic,141,0.95,89,0.72,0.67,2001
+Around the World,Daft Punk,electronic,party,123,0.84,83,0.86,0.84,1997
+Wake Me Up,Avicii,edm,happy,127,0.75,72,0.69,0.78,2013
+Levels,Avicii,edm,party,125,0.92,83,0.76,0.78,2011
+The Nights,Avicii,edm,happy,113,0.85,73,0.66,0.91,2014
+Hey Brother,Avicii,edm,happy,133,0.79,74,0.68,0.91,2013
+Titanium,David Guetta,edm,energetic,137,0.93,73,0.72,0.65,2011
+Memories,David Guetta,edm,party,118,0.93,78,0.77,0.75,2009
+Without You,David Guetta,edm,sad,85,0.53,74,0.44,0.19,2011
+Animals,Martin Garrix,edm,energetic,123,0.91,78,0.61,0.7,2013
+Scared to Be Lonely,Martin Garrix,edm,sad,84,0.56,96,0.53,0.24,2017
+In the Name of Love,Martin Garrix,edm,romantic,84,0.6,83,0.61,0.51,2016
+Closer,The Chainsmokers,edm,romantic,85,0.64,79,0.52,0.65,2016
+Something Just Like This,The Chainsmokers,edm,happy,129,0.75,78,0.68,0.85,2017
+Don’t Let Me Down,The Chainsmokers,edm,sad,91,0.48,76,0.44,0.3,2016
+Roses,The Chainsmokers,edm,romantic,101,0.55,87,0.5,0.6,2015
+Lean On,Major Lazer,dance,party,138,0.86,96,0.74,0.71,2015
+Cold Water,Major Lazer,dance,chill,105,0.56,87,0.64,0.6,2016
+Rather Be,Clean Bandit,dance,happy,112,0.74,87,0.78,0.8,2014
+Rockabye,Clean Bandit,dance,sad,100,0.48,80,0.51,0.23,2016
+Latch,Disclosure,electronic,romantic,89,0.59,83,0.58,0.51,2012
+You & Me,Disclosure,electronic,romantic,96,0.63,88,0.48,0.61,2013
+Sweet Nothing,Calvin Harris,edm,party,111,0.95,81,0.85,0.77,2012
+Summer,Calvin Harris,edm,happy,117,0.82,83,0.8,0.81,2014
+Feel So Close,Calvin Harris,edm,happy,129,0.85,81,0.71,0.82,2011
+This Is What You Came For,Calvin Harris,edm,party,110,0.9,96,0.82,0.73,2016
+We Found Love,Rihanna,dance,party,126,0.92,86,0.88,0.76,2011
+Where Have You Been,Rihanna,dance,party,115,0.84,72,0.76,0.76,2011
+Firestone,Kygo,tropical house,romantic,107,0.47,76,0.62,0.58,2014
+Stole the Show,Kygo,tropical house,happy,107,0.7,86,0.8,0.88,2015
+It Ain’t Me,Kygo,tropical house,sad,89,0.37,95,0.54,0.31,2017
+Faded,Alan Walker,edm,sad,96,0.52,95,0.54,0.3,2015
+Alone,Alan Walker,edm,sad,101,0.49,82,0.43,0.3,2016
+Better Off Alone,Alice Deejay,dance,party,114,0.83,68,0.79,0.85,1999
+Sandstorm,Darude,trance,energetic,143,0.83,81,0.61,0.67,1999
+Blue,Eiffel 65,dance,party,129,0.92,76,0.78,0.81,1998
+Billie Jean,Michael Jackson,pop,party,128,0.83,85,0.78,0.79,1982
+Beat It,Michael Jackson,pop rock,energetic,129,0.84,80,0.66,0.59,1982
+Thriller,Michael Jackson,pop,dark,115,0.69,71,0.5,0.12,1982
+Man in the Mirror,Michael Jackson,pop,sad,101,0.41,79,0.53,0.26,1987
+Like a Prayer,Madonna,pop,happy,116,0.71,78,0.71,0.76,1989
+Material Girl,Madonna,pop,party,111,0.82,74,0.75,0.81,1984
+Vogue,Madonna,pop,party,112,0.85,76,0.81,0.78,1990
+Take On Me,a-ha,synthpop,happy,107,0.74,83,0.66,0.88,1985
+Everybody Wants to Rule the World,Tears for Fears,synthpop,nostalgic,96,0.58,79,0.65,0.61,1985
+Sweet Dreams,Eurythmics,synthpop,cool,112,0.59,71,0.73,0.53,1983
+Don’t Stop Believin’,Journey,rock,happy,127,0.71,91,0.68,0.81,1981
+Livin’ on a Prayer,Bon Jovi,rock,energetic,122,0.87,79,0.68,0.68,1986
+Sweet Child O’ Mine,Guns N’ Roses,rock,energetic,132,0.86,65,0.65,0.59,1987
+November Rain,Guns N’ Roses,rock,sad,96,0.42,74,0.44,0.22,1991
+Bohemian Rhapsody,Queen,rock,dramatic,104,0.75,84,0.36,0.35,1975
+Don’t Stop Me Now,Queen,rock,happy,133,0.71,76,0.72,0.89,1978
+Another One Bites the Dust,Queen,rock,cool,93,0.67,84,0.78,0.54,1980
+Under Pressure,Queen,rock,dramatic,92,0.74,75,0.4,0.44,1981
+Hotel California,Eagles,rock,nostalgic,112,0.6,73,0.56,0.54,1976
+Dreams,Fleetwood Mac,rock,chill,90,0.5,69,0.65,0.62,1977
+Go Your Own Way,Fleetwood Mac,rock,energetic,134,0.92,70,0.71,0.71,1977
+Africa,Toto,rock,nostalgic,97,0.62,84,0.54,0.6,1982
+More Than a Feeling,Boston,rock,happy,131,0.75,67,0.67,0.83,1976
+Stairway to Heaven,Led Zeppelin,rock,dramatic,84,0.71,69,0.43,0.33,1971
+Immigrant Song,Led Zeppelin,rock,energetic,124,0.85,78,0.69,0.61,1970
+Paint It Black,The Rolling Stones,rock,dark,121,0.7,60,0.45,0.18,1966
+Start Me Up,The Rolling Stones,rock,energetic,122,0.95,84,0.62,0.59,1981
+Come Together,The Beatles,rock,cool,98,0.62,60,0.75,0.51,1969
+Hey Jude,The Beatles,rock,happy,131,0.71,78,0.75,0.88,1968
+Let It Be,The Beatles,rock,sad,99,0.45,60,0.44,0.31,1970
+Here Comes the Sun,The Beatles,rock,happy,117,0.71,61,0.69,0.84,1969
+Imagine,John Lennon,soft rock,calm,91,0.32,66,0.5,0.44,1971
+Rocket Man,Elton John,soft rock,sad,95,0.31,80,0.48,0.19,1972
+Your Song,Elton John,soft rock,romantic,98,0.44,80,0.48,0.6,1970
+Tiny Dancer,Elton John,soft rock,nostalgic,113,0.43,60,0.6,0.62,1971
+Piano Man,Billy Joel,soft rock,nostalgic,117,0.47,80,0.5,0.55,1973
+Uptown Girl,Billy Joel,pop rock,happy,109,0.71,65,0.69,0.79,1983
+Dancing Queen,ABBA,pop,party,136,0.77,76,0.88,0.84,1976
+Mamma Mia,ABBA,pop,happy,122,0.75,76,0.72,0.79,1975
+Take a Chance on Me,ABBA,pop,happy,132,0.78,62,0.79,0.8,1977
+Stayin’ Alive,Bee Gees,disco,party,117,0.87,66,0.77,0.7,1977
+September,Earth Wind & Fire,funk,happy,115,0.77,70,0.79,0.87,1978
+Superstition,Stevie Wonder,funk,cool,114,0.63,77,0.77,0.46,1972
+Isn’t She Lovely,Stevie Wonder,soul,happy,126,0.67,73,0.79,0.88,1976
+I Will Survive,Gloria Gaynor,disco,happy,131,0.77,72,0.78,0.79,1978
+Girls Just Want to Have Fun,Cyndi Lauper,pop,party,136,0.83,64,0.75,0.71,1983
+Time After Time,Cyndi Lauper,pop,romantic,89,0.47,64,0.63,0.6,1983
+Careless Whisper,George Michael,pop,romantic,102,0.46,66,0.48,0.52,1984
+Amsterdam,Imagine Dragons,rock,energetic,120,0.88,75,0.62,0.61,2017
+Whatever It Takes,Imagine Dragons,rock,energetic,134,0.91,88,0.67,0.59,2017
+Natural,Imagine Dragons,rock,angry,140,0.93,86,0.64,0.52,2018
+Bones,Imagine Dragons,rock,cool,114,0.82,90,0.69,0.66,2022
+Adventure of a Lifetime,Coldplay,alternative,happy,112,0.72,88,0.69,0.82,2015
+A Sky Full of Stars,Coldplay,pop,happy,125,0.86,91,0.68,0.88,2014
+Hymn for the Weekend,Coldplay,pop,chill,100,0.63,87,0.60,0.75,2016
+Charlie Brown,Coldplay,alternative,energetic,138,0.84,78,0.57,0.70,2011
+Arabella,Arctic Monkeys,indie rock,cool,95,0.71,82,0.60,0.53,2013
+Why'd You Only Call Me When You're High?,Arctic Monkeys,indie rock,cool,92,0.55,85,0.78,0.48,2013
+Snap Out of It,Arctic Monkeys,indie rock,happy,110,0.67,81,0.73,0.74,2013
+I Bet You Look Good on the Dancefloor,Arctic Monkeys,indie rock,energetic,150,0.95,79,0.70,0.68,2005
+Read My Mind,The Killers,rock,nostalgic,118,0.70,83,0.61,0.58,2006
+Runaways,The Killers,rock,sad,125,0.76,74,0.52,0.33,2012
+All These Things That I've Done,The Killers,rock,energetic,120,0.85,80,0.58,0.60,2004
+Run for Cover,The Killers,rock,energetic,145,0.92,72,0.63,0.59,2017
+Pompeii,Bastille,alternative,nostalgic,127,0.75,88,0.68,0.69,2013
+Good Grief,Bastille,alternative,sad,120,0.64,75,0.67,0.39,2016
+Happier,Marshmello,alternative,sad,100,0.54,92,0.69,0.29,2018
+Quarter Past Midnight,Bastille,alternative,energetic,136,0.90,72,0.64,0.65,2018
+Counting Stars,OneRepublic,pop,happy,122,0.76,94,0.66,0.80,2013
+Secrets,OneRepublic,pop,sad,148,0.85,80,0.60,0.35,2009
+Good Life,OneRepublic,pop,happy,95,0.72,82,0.68,0.88,2011
+I Lived,OneRepublic,pop,energetic,120,0.79,84,0.66,0.86,2014
+Shut Up and Dance,WALK THE MOON,indie pop,happy,128,0.90,86,0.75,0.89,2014
+Anna Sun,WALK THE MOON,indie pop,happy,121,0.85,72,0.71,0.84,2012
+One Foot,WALK THE MOON,indie pop,energetic,135,0.88,75,0.72,0.78,2017
+Tightrope,WALK THE MOON,indie pop,cool,110,0.69,68,0.68,0.61,2014
+Feel It Still,Portugal. The Man,indie pop,happy,79,0.80,89,0.80,0.86,2017
+Live in the Moment,Portugal. The Man,indie pop,happy,122,0.82,70,0.72,0.83,2017
+Modern Jesus,Portugal. The Man,indie rock,cool,104,0.67,66,0.60,0.53,2013
+Purple Yellow Red and Blue,Portugal. The Man,indie rock,chill,97,0.56,65,0.61,0.59,2013
+The Less I Know The Better,Tame Impala,indie,chill,117,0.58,92,0.64,0.55,2015
+Borderline,Tame Impala,indie,cool,114,0.62,86,0.72,0.58,2020
+Lost in Yesterday,Tame Impala,indie,happy,116,0.73,80,0.74,0.82,2020
+Elephant,Tame Impala,indie rock,energetic,123,0.88,75,0.58,0.61,2012
+Take Care,Drake,r&b,sad,92,0.42,88,0.51,0.25,2011
+Started From The Bottom,Drake,hip hop,energetic,86,0.70,85,0.69,0.62,2013
+Nice For What,Drake,hip hop,happy,93,0.74,90,0.77,0.88,2018
+In My Feelings,Drake,hip hop,romantic,91,0.55,89,0.72,0.64,2018
+Praise The Lord,A$AP Rocky,hip hop,cool,80,0.61,86,0.71,0.56,2018
+LSD,A$AP Rocky,hip hop,chill,88,0.42,80,0.62,0.47,2015
+Sundress,A$AP Rocky,hip hop,romantic,92,0.45,81,0.65,0.61,2018
+Everyday,A$AP Rocky,hip hop,happy,104,0.67,74,0.73,0.80,2015
+Mask Off,Future,hip hop,dark,150,0.73,88,0.78,0.34,2017
+Life Is Good,Future,hip hop,cool,142,0.82,90,0.76,0.51,2020
+WAIT FOR U,Future,r&b,romantic,83,0.44,89,0.53,0.62,2022
+Low Life,Future,hip hop,dark,146,0.78,84,0.75,0.28,2016
+The Hills,The Weeknd,r&b,dark,113,0.73,95,0.58,0.18,2015
+Die For You,The Weeknd,r&b,romantic,67,0.42,96,0.52,0.58,2016
+Earned It,The Weeknd,r&b,romantic,73,0.35,87,0.46,0.54,2015
+I Feel It Coming,The Weeknd,r&b,happy,93,0.63,90,0.77,0.82,2016
+Ghosts 'n' Stuff,Deadmau5,edm,energetic,128,0.92,72,0.68,0.61,2008
+Strobe,Deadmau5,edm,focus,128,0.71,78,0.42,0.52,2009
+Raise Your Weapon,Deadmau5,edm,dark,128,0.74,70,0.48,0.31,2010
+The Veldt,Deadmau5,edm,chill,128,0.63,73,0.55,0.61,2012
+Language,Porter Robinson,edm,happy,128,0.88,80,0.67,0.86,2012
+Shelter,Porter Robinson,edm,nostalgic,100,0.62,88,0.56,0.71,2016
+Sad Machine,Porter Robinson,edm,sad,87,0.44,75,0.47,0.23,2014
+Look at the Sky,Porter Robinson,edm,happy,114,0.73,82,0.61,0.89,2021
+Animals,Maroon 5,pop,romantic,95,0.64,90,0.70,0.52,2014
+Sugar,Maroon 5,pop,happy,120,0.78,92,0.78,0.88,2014
+Memories,Maroon 5,pop,sad,91,0.39,94,0.56,0.33,2019
+Payphone,Maroon 5,pop,sad,110,0.61,88,0.66,0.29,2012
+Counting Blue Cars,Dishwalla,alternative,nostalgic,100,0.52,60,0.56,0.57,1996
+High Hopes,Panic! At The Disco,pop,energetic,124,0.88,89,0.70,0.76,2018
+I Write Sins Not Tragedies,Panic! At The Disco,pop rock,energetic,170,0.91,84,0.63,0.61,2005
+Death of a Bachelor,Panic! At The Disco,pop,happy,140,0.82,81,0.68,0.80,2016
+Sweet Nothing,Florence and the Machine,indie,dramatic,104,0.68,74,0.55,0.43,2011
+Cosmic Love,Florence and the Machine,indie,romantic,127,0.72,73,0.52,0.57,2009
+Mountain Sound,Of Monsters and Men,folk,happy,105,0.72,76,0.67,0.84,2011
+Little Talks,Of Monsters and Men,folk,happy,103,0.74,84,0.66,0.81,2011
+Home,Edward Sharpe & The Magnetic Zeros,folk,happy,112,0.63,78,0.72,0.88,2009
+Big Jet Plane,Angus & Julia Stone,folk,chill,82,0.35,72,0.49,0.52,2010
+Sweater Weather,The Neighbourhood,alternative,cool,124,0.66,89,0.61,0.48,2013
+Daddy Issues,The Neighbourhood,alternative,dark,85,0.43,82,0.55,0.21,2015
+Heat Waves,Glass Animals,indie pop,chill,81,0.52,95,0.76,0.53,2020
+Gooey,Glass Animals,indie pop,chill,91,0.42,79,0.67,0.56,2014
+Tongue Tied,Grouplove,indie pop,happy,113,0.82,82,0.70,0.86,2011
+Ways To Go,Grouplove,indie pop,energetic,121,0.86,70,0.68,0.78,2013
+Dog Days,The Strumbellas,folk pop,happy,116,0.74,65,0.66,0.82,2016
+Spirits,The Strumbellas,folk pop,happy,82,0.63,78,0.57,0.75,2016
+Take Me to Church,Hozier,soul,dramatic,129,0.66,90,0.56,0.32,2013
+Someone New,Hozier,soul,romantic,111,0.59,74,0.63,0.61,2014
+Electric Love,BØRNS,indie pop,romantic,120,0.78,86,0.69,0.80,2015
+Past Lives,BØRNS,indie pop,nostalgic,93,0.48,75,0.58,0.42,2015
+Sweet but Psycho,Ava Max,pop,party,133,0.88,86,0.72,0.74,2018
+Kings & Queens,Ava Max,pop,energetic,130,0.84,83,0.70,0.76,2020
+Therefore I Am,Billie Eilish,pop,cool,94,0.63,82,0.73,0.45,2020
+Everything I Wanted,Billie Eilish,pop,sad,120,0.34,88,0.55,0.24,2019
+Solar Power,Lorde,pop,chill,85,0.45,76,0.62,0.67,2021
+Liability,Lorde,pop,sad,75,0.28,78,0.39,0.19,2017
+Electricity,Dua Lipa,dance,party,118,0.82,85,0.83,0.79,2018
+Physical,Dua Lipa,pop,energetic,147,0.91,83,0.66,0.73,2020
+Sweet Melody,Little Mix,pop,party,120,0.84,78,0.75,0.76,2020
+Black Magic,Little Mix,pop,happy,112,0.76,82,0.72,0.84,2015
+Pompeii,The Score,rock,energetic,126,0.88,67,0.64,0.62,2017
+Unstoppable,The Score,rock,energetic,125,0.91,78,0.66,0.70,2016
+Hall of Fame,The Script,pop rock,inspirational,85,0.72,86,0.60,0.76,2012
+Breakeven,The Script,pop rock,sad,94,0.44,80,0.53,0.28,2008

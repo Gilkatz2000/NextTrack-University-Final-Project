@@ -18,7 +18,6 @@ REQUIRED_DATASET_COLUMNS = {
     "danceability",
     "valence",
     "release_year",
-    "spotify_url",
 }
 
 

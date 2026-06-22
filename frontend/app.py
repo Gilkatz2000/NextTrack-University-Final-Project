@@ -36,6 +36,19 @@ st.markdown(
         color: #666;
         font-size: 14px;
     }
+    .stApp {
+    background: linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
+    }
+    .block-container {
+        max-width: 1100px;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background-color: white;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    }
     </style>
     """,
     unsafe_allow_html=True,
@@ -123,7 +136,7 @@ st.subheader("About NextTrack")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    st.metric("Dataset Size", "250 tracks")
+    st.metric("Dataset Size", "350 tracks")
 
 with col2:
     st.metric("Method", "Cosine Similarity")
@@ -136,3 +149,6 @@ st.write(
     "It uses only the current genre, mood and optional artist input to generate recommendations. "
     "It does not store user accounts, listening history, playlists or long-term profiles."
 )
+
+st.divider()
+st.caption("NextTrack | University of London Final Project | Gil Katz")
