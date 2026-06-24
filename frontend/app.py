@@ -1,7 +1,7 @@
 import requests
 import streamlit as st
 
-from frontend.feedback import save_feedback
+from feedback import save_feedback
 
 API_URL = "http://127.0.0.1:8000"
 
