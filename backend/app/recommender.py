@@ -5,6 +5,17 @@ from urllib.parse import quote_plus
 
 from app.data_loader import load_tracks
 
+
+def build_spotify_search_url(track, artist):
+    query = quote_plus(f"{track} {artist}")
+    return f"https://open.spotify.com/search/{query}"
+
+
+def build_youtube_search_url(track, artist):
+    query = quote_plus(f"{track} {artist} official audio")
+    return f"https://www.youtube.com/results?search_query={query}"
+
+
 def build_recommendation_reason(track, genres, mood, seed_artists):
     reasons = []
 
@@ -39,10 +50,10 @@ def build_recommendation_reason(track, genres, mood, seed_artists):
     if not reasons:
         reasons.append("has the closest overall similarity to your current session choices")
 
-    # Keep the explanation short and readable in the frontend.
     selected_reasons = reasons[:3]
 
     return "Recommended because it " + ", ".join(selected_reasons) + "."
+
 
 def get_recommendations(genres, mood, seed_artists, limit=10):
     df = load_tracks()
@@ -165,10 +176,20 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
                 mood,
                 seed_artists
             ),
+            "spotify_url": build_spotify_search_url(
+                row["track"],
+                row["artist"]
+            ),
+            "youtube_url": build_youtube_search_url(
+                row["track"],
+                row["artist"]
+            ),
         }
 
-        spotify_query = quote_plus(f"{row['track']} {row['artist']}")
-        recommendation["spotify_url"] = f"https://open.spotify.com/search/{spotify_query}"
+        if "spotify_track_id" in row.index and pd.notna(row["spotify_track_id"]):
+            spotify_track_id = str(row["spotify_track_id"]).strip()
+            if spotify_track_id:
+                recommendation["spotify_track_id"] = spotify_track_id
 
         recommendations.append(recommendation)
 

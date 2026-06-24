@@ -13,9 +13,10 @@ REQUIRED_RECOMMENDATION_FIELDS = {
     "danceability",
     "valence",
     "release_year",
-    "spotify_url",
     "score",
     "reason",
+    "spotify_url",
+    "youtube_url",
 }
 
 def test_get_recommendations_returns_limited_list_with_expected_fields():
@@ -30,6 +31,11 @@ def test_get_recommendations_returns_limited_list_with_expected_fields():
     assert 0 < len(recommendations) <= 5
     for item in recommendations:
         assert set(item.keys()) == REQUIRED_RECOMMENDATION_FIELDS
+        assert item["spotify_url"].startswith("https://open.spotify.com/search/")
+        assert item["youtube_url"].startswith(
+            "https://www.youtube.com/results?search_query="
+        )
+        assert "official+audio" in item["youtube_url"]
 
 
 def test_recommendations_are_sorted_by_score_descending_after_filtering():

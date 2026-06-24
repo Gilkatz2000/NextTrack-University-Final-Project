@@ -34,6 +34,12 @@ def get_track_options():
         "genres": sorted(df["genre"].dropna().unique().tolist()),
         "moods": sorted(df["mood"].dropna().unique().tolist()),
         "artists": sorted(df["artist"].dropna().unique().tolist()),
+        "stats": {
+            "track_count": int(len(df)),
+            "genre_count": int(df["genre"].nunique()),
+            "mood_count": int(df["mood"].nunique()),
+            "artist_count": int(df["artist"].nunique()),
+        },
     }
 
 
