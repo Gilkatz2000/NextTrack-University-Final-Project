@@ -80,6 +80,8 @@
 * Updated the Streamlit frontend to display Spotify and YouTube search buttons for each recommendation.
 * Renamed listening buttons to clearly indicate that they perform external searches rather than direct playback.
 * Added expandable recommendation details showing tempo, energy, popularity, danceability, valence and release year.
+* Updated recommendation metrics to use user-friendly formats including BPM, percentages and popularity scores.
+* Replaced raw recommendation scores with match strength percentages to improve usability.
 * Implemented a reset feature allowing users to clear all selected preferences and start a new recommendation session.
 * Improved frontend validation and user feedback messages.
 * Added an evaluation form to support user testing and recommendation assessment.
@@ -90,9 +92,15 @@
 * Added dataset statistics to the frontend interface.
 * Refactored recommendation helper functions into dedicated service modules.
 * Created separate services for recommendation explanation generation and external link generation.
+* Improved recommendation ranking by combining cosine similarity with weighted genre, mood and artist preference scoring.
 * Improved project modularity and reduced coupling between recommendation components.
+* Added additional frontend evidence screenshots covering recommendation results, recommendation details, evaluation functionality and listening links.
 * Verified that all 18 automated tests passed successfully after refactoring.
 * Verified that the FastAPI backend and Streamlit frontend continued to operate correctly after all changes.
+
+### Software Engineering Improvements
+
+The project structure was further improved through refactoring and modularisation. Recommendation explanation generation, external link generation and user feedback collection were moved into dedicated modules, reducing coupling between components and improving maintainability. Automated testing confirmed that these structural improvements did not introduce regressions.
 
 # Development Reflection
 
