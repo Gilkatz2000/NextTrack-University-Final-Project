@@ -1,13 +1,14 @@
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
-from app.data_loader import load_tracks
 
+from app.data_loader import load_tracks
 from app.services.recommendation_links import (
     build_spotify_search_url,
     build_youtube_search_url,
 )
 from app.services.recommendation_reasons import build_recommendation_reason
+
 
 def get_recommendations(genres, mood, seed_artists, limit=10):
     df = load_tracks()
@@ -36,7 +37,7 @@ def get_recommendations(genres, mood, seed_artists, limit=10):
 
     encoded_features = pd.get_dummies(
         feature_df,
-        columns=["genre", "mood", "artist"]
+        columns=["genre", "mood", "artist"],
     )
 
     numeric_columns = [
@@ -56,7 +57,7 @@ def get_recommendations(genres, mood, seed_artists, limit=10):
     session_vector = pd.DataFrame(
         0,
         index=[0],
-        columns=encoded_features.columns
+        columns=encoded_features.columns,
     )
 
     for genre in genres:
@@ -83,15 +84,46 @@ def get_recommendations(genres, mood, seed_artists, limit=10):
     similarity_scores = cosine_similarity(session_vector, encoded_features)[0]
 
     df["score"] = similarity_scores
+    df["adjusted_score"] = df["score"]
 
-    ranked_tracks = df.sort_values(by="score", ascending=False)
+    # Ranking priority:
+    # 1. Tracks matching both selected genre and mood
+    # 2. Tracks matching selected genre
+    # 3. Tracks matching selected mood
+    # 4. General cosine similarity fallback
+    df.loc[
+        (df["genre"].isin(genres)) & (df["mood"] == mood),
+        "adjusted_score",
+    ] += 0.40
+
+    df.loc[
+        df["genre"].isin(genres),
+        "adjusted_score",
+    ] += 0.25
+
+    df.loc[
+        df["mood"] == mood,
+        "adjusted_score",
+    ] += 0.15
+
+    df.loc[
+        df["artist"].isin(seed_artists),
+        "adjusted_score",
+    ] += 0.10
+
+    df["adjusted_score"] = df["adjusted_score"].clip(upper=1.0)
+
+    ranked_tracks = df.sort_values(
+        by="adjusted_score",
+        ascending=False,
+    )
 
     diversified = apply_diversity_filter(
         ranked_tracks,
         genres,
         mood,
         seed_artists,
-        limit
+        limit,
     )
 
     return diversified
@@ -123,20 +155,20 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
             "danceability": float(row["danceability"]),
             "valence": float(row["valence"]),
             "release_year": int(row["release_year"]),
-            "score": round(float(row["score"]), 3),
+            "score": round(float(row["adjusted_score"]), 3),
             "reason": build_recommendation_reason(
                 row,
                 genres,
                 mood,
-                seed_artists
+                seed_artists,
             ),
             "spotify_url": build_spotify_search_url(
                 row["track"],
-                row["artist"]
+                row["artist"],
             ),
             "youtube_url": build_youtube_search_url(
                 row["track"],
-                row["artist"]
+                row["artist"],
             ),
         }
 

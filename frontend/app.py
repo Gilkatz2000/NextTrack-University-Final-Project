@@ -10,6 +10,15 @@ st.set_page_config(page_title="NextTrack", page_icon="🎵", layout="wide")
 st.markdown(
     """
     <style>
+    #MainMenu {
+        visibility: hidden;
+    }
+    header {
+        visibility: hidden;
+    }
+    footer {
+        visibility: hidden;
+    }
     .main-title {
         font-size: 46px;
         font-weight: 800;
@@ -130,14 +139,20 @@ try:
                     st.write(f"**Artist:** {rec['artist']}")
                     st.write(f"**Genre:** {rec['genre']} | **Mood:** {rec['mood']}")
                     st.write(f"**Why recommended:** {rec['reason']}")
-                    st.write(f"**Score:** {round(float(rec['score']), 3)}")
+
+                    match_percentage = round(float(rec["score"]) * 100)
+                    st.write(f"**Session score:** {match_percentage}%")
 
                     with st.expander("View track details"):
-                        st.write(f"Tempo: {rec['tempo']}")
-                        st.write(f"Energy: {rec['energy']}")
-                        st.write(f"Popularity: {rec['popularity']}")
-                        st.write(f"Danceability: {rec['danceability']}")
-                        st.write(f"Valence: {rec['valence']}")
+                        energy_percentage = round(float(rec["energy"]) * 100)
+                        danceability_percentage = round(float(rec["danceability"]) * 100)
+                        valence_percentage = round(float(rec["valence"]) * 100)
+
+                        st.write(f"Tempo: {rec['tempo']} BPM")
+                        st.write(f"Energy: {energy_percentage}%")
+                        st.write(f"Popularity: {rec['popularity']}/100")
+                        st.write(f"Danceability: {danceability_percentage}%")
+                        st.write(f"Valence (positiveness): {valence_percentage}%")
                         st.write(f"Release year: {rec['release_year']}")
 
                 with right:

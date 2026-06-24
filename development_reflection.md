@@ -73,13 +73,34 @@
 * Verified that all 17 automated tests passed successfully after the updates.
 * Updated project documentation and prepared the system for user evaluation and final dissertation work.
 
+## 24/06/2026
+
+* Added dynamic YouTube search link generation for all recommendations.
+* Extended recommendation responses to include both Spotify and YouTube external listening links.
+* Updated the Streamlit frontend to display Spotify and YouTube search buttons for each recommendation.
+* Renamed listening buttons to clearly indicate that they perform external searches rather than direct playback.
+* Added expandable recommendation details showing tempo, energy, popularity, danceability, valence and release year.
+* Implemented a reset feature allowing users to clear all selected preferences and start a new recommendation session.
+* Improved frontend validation and user feedback messages.
+* Added an evaluation form to support user testing and recommendation assessment.
+* Implemented anonymous evaluation result collection using CSV storage.
+* Created a dedicated feedback module to separate evaluation functionality from the main frontend application.
+* Added automated tests for evaluation feedback generation and CSV output.
+* Increased the automated test suite from 17 to 18 tests.
+* Added dataset statistics to the frontend interface.
+* Refactored recommendation helper functions into dedicated service modules.
+* Created separate services for recommendation explanation generation and external link generation.
+* Improved project modularity and reduced coupling between recommendation components.
+* Verified that all 18 automated tests passed successfully after refactoring.
+* Verified that the FastAPI backend and Streamlit frontend continued to operate correctly after all changes.
+
 # Development Reflection
 
 ## What Worked Well
 
 ### Automated Testing
 
-One of the most useful improvements during development was introducing automated testing with pytest. Before this, changes had to be checked manually. The project now contains 17 automated tests covering API endpoints, recommendation functionality, dataset validation and evaluation components. The tests made it much easier to verify that new features and refactoring work did not introduce regressions.
+One of the most useful improvements during development was introducing automated testing with pytest. Before this, changes had to be checked manually. The project now contains 18 automated tests covering API endpoints, recommendation functionality, dataset validation and evaluation components. The tests made it much easier to verify that new features and refactoring work did not introduce regressions.
 
 ### Dataset Expansion
 
@@ -97,17 +118,9 @@ The diversity filtering mechanism continued to perform well throughout developme
 
 Adding a baseline recommender provided a useful point of comparison. The baseline used only genre matching and popularity ranking, while NextTrack used cosine similarity and diversity filtering. The comparison results showed that NextTrack generally produced recommendations from more unique artists and reduced artist repetition compared to the baseline approach.
 
-### Recommendation Explainability
-
-A recommendation explanation feature was added to improve transparency. Each recommendation now includes a short explanation describing why it was selected. Although the explanations are relatively simple, they help users understand the reasoning behind recommendations and improve the interpretability of the system.
-
 ### API Improvements
 
-The API evolved significantly during development. In addition to the recommendation endpoint, a new endpoint was added to provide available genres, moods and artists directly from the dataset. This functionality will support the planned frontend by allowing dropdown menus and other interface components to be populated dynamically.
-
-### Project Organisation
-
-The project structure improved considerably during development. A dedicated data folder, reusable data loading component and results folder were introduced. Consolidating the project around a single dataset source reduced duplication and made the codebase easier to maintain.
+The API evolved significantly during development. In addition to the recommendation endpoint, a new endpoint was added to provide available genres, moods and artists directly from the dataset. This functionality supports the frontend by allowing dropdown menus and other interface components to be populated dynamically.
 
 ### Evaluation Framework
 
@@ -115,23 +128,28 @@ The evaluation framework became much stronger than the original prototype implem
 
 ### Interface Design and Planning
 
-As the backend implementation approached completion, attention shifted towards frontend planning. A low-fidelity single-page wireframe was created to visualise how users would interact with the recommendation system. The wireframe focused on the core workflow of selecting preferences, generating recommendations and opening tracks in Spotify. Creating the wireframe helped identify opportunities to simplify the interface and ensure that the planned frontend remained aligned with the actual project requirements. The wireframe will also serve as a design artefact for the final dissertation and as a guide during frontend implementation.
+A low-fidelity wireframe was created before frontend development began. This helped visualise the recommendation workflow, simplify the user interface and ensure that the frontend remained aligned with the project requirements.
 
 ### Frontend Development
 
-A major milestone during this development stage was the implementation of a Streamlit frontend. Previous versions of the project could only be accessed through Swagger or direct API requests. The frontend provides a simple interface that allows users to select genres, moods and a preferred artist before generating recommendations. The interface intentionally focuses on the core recommendation workflow and avoids unnecessary features such as user accounts, playlists or authentication.
+A Streamlit frontend was added to provide a simple user interface for the recommendation system. Users can select genres, moods and an optional artist before generating recommendations. The interface focuses on the core recommendation workflow and intentionally excludes user accounts, playlists and authentication.
 
 ### Full System Integration
 
-The project evolved from an isolated backend service into a complete working application. The frontend communicates with the FastAPI backend through HTTP requests, dynamically retrieves available options from the dataset and displays recommendation results in a user-friendly format. This demonstrated that the overall system architecture functions correctly as an integrated solution.
+The project evolved from a standalone backend API into a complete application. The frontend communicates with the FastAPI backend, retrieves available options from the dataset and displays recommendations through a user-friendly interface.
 
-### Dynamic Spotify Integration
+### User Evaluation Infrastructure
 
-Spotify integration was simplified by dynamically generating Spotify search links directly from track and artist information. This approach removed the need to maintain Spotify URLs within the dataset while ensuring that every recommendation can still be opened easily in Spotify.
+An evaluation form was added to collect anonymous user feedback on recommendation quality, diversity, usability and overall satisfaction. Feedback is stored in CSV format, providing evaluation data without requiring databases or user accounts.
 
-### Project Structure Improvements
+### Frontend Usability Improvements
 
-Separating backend and frontend components into dedicated directories improved the organisation of the project. The resulting structure is easier to understand, maintain and extend. This separation also better reflects common web application development practices and improves overall codebase clarity.
+Several usability improvements were added to the Streamlit frontend. Users can now reset recommendation inputs, view additional track metadata through expandable detail panels and access external Spotify and YouTube search links directly from recommendation results. These additions improved the overall user experience while maintaining the simplicity of the interface.
+
+### Software Engineering Improvements
+
+The project structure was further improved through refactoring and modularisation. Recommendation explanation generation and external link generation were moved into dedicated service modules, reducing coupling within the recommendation engine and improving maintainability. Separating frontend feedback functionality into its own module also improved code organisation and readability. Automated testing confirmed that these structural improvements did not introduce regressions.
+
 ## Challenges and Limitations
 
 ### Dataset Size
@@ -142,10 +160,6 @@ Although the dataset was expanded to 350 tracks, it remains very small compared 
 
 Technical metrics such as response time, diversity and recommendation relevance can be measured relatively easily. However, determining whether recommendations are genuinely enjoyable or useful remains difficult because music preferences are highly subjective and vary significantly between users.
 
-### Refactoring Complexity
-
-Expanding the dataset and reorganising the project structure required changes across multiple components of the system. Recommendation models, evaluation scripts, API responses, automated tests and frontend integration all needed to be updated. Although the refactoring was successful, it increased development effort and required careful validation.
-
 ### Limited User Evaluation
 
 Current evaluation has focused primarily on automated testing and predefined test sessions. While this provides useful technical evidence, it does not fully represent how real users would interact with the system. User evaluation will be an important part of the next development stage.
@@ -153,14 +167,6 @@ Current evaluation has focused primarily on automated testing and predefined tes
 ### Simple Recommendation Approach
 
 The cosine similarity recommendation approach was chosen because it is relatively simple to implement, explain and evaluate. While suitable for the project scope, it is significantly less sophisticated than recommendation systems used by commercial music platforms, which typically make use of much larger datasets and advanced machine learning techniques.
-
-### Frontend Simplicity
-
-The frontend was intentionally designed to be simple and focused on demonstrating the recommendation system. While this approach aligns with the project scope, it also means that the user interface lacks many features commonly found in modern music applications. Features such as playlists, listening history, social functionality and personalised user profiles were intentionally excluded to keep the project manageable.
-
-### Dataset Preparation Effort
-
-Expanding the dataset required a significant amount of manual work. Track metadata needed to be collected, validated and formatted consistently across all records. Several data quality issues were encountered during development, including inconsistent values and duplicate headers introduced during dataset expansion. Maintaining data quality became increasingly important as the dataset grew.
 
 ### Recommendation Explainability
 
@@ -170,17 +176,10 @@ Although recommendation explanations improve transparency, the explanations rema
 
 A key design objective of NextTrack was to remain completely stateless. This reduces complexity, improves privacy and simplifies implementation. However, it also means that the system cannot learn from previous user interactions or adapt recommendations over time. Recommendations are generated solely from the current session inputs and therefore provide less personalisation than systems that maintain long-term user profiles.
 
-### Limited Scale Testing
+### External Music Access Limitations
 
-The project was tested extensively using automated tests and predefined evaluation sessions. However, testing was conducted on a relatively small scale compared to commercial recommendation systems. The application has not been evaluated under large user populations, heavy concurrent traffic or substantially larger datasets. Therefore, performance at larger scales remains uncertain.
-
-### Recommendation Diversity Trade-offs
-
-The diversity filtering mechanism improves recommendation variety by reducing artist repetition and encouraging broader genre coverage. However, increasing diversity can sometimes reduce recommendation relevance because highly similar tracks may be excluded from the final recommendation list. Balancing recommendation relevance and recommendation diversity remains a challenging aspect of recommendation system design.
-
+Providing direct music playback proved challenging because the project intentionally avoids storing copyrighted audio files and does not use authenticated third-party music APIs. As a result, Spotify and YouTube integration was implemented using dynamically generated search links rather than direct playback functionality. While this approach allows users to easily locate recommended tracks, it does not provide a fully integrated listening experience.
 
 ## Remaining Work
 
-The backend and frontend implementations are now largely complete and considered feature complete for the current project scope. The remaining work will focus on conducting user evaluations, analysing evaluation results, collecting dissertation evidence and screenshots, and updating the final dissertation to reflect the completed implementation and findings.
-
-Future work beyond the project scope could include larger datasets, more advanced recommendation algorithms, user profile support and additional recommendation evaluation techniques. However, these enhancements are not required for the objectives of the current project.
+The remaining work will focus on expanding user evaluation, analysing evaluation results, collecting dissertation evidence and screenshots, and updating the final dissertation to reflect the completed implementation and findings.
