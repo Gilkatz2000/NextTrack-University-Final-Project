@@ -102,6 +102,17 @@
 
 The project structure was further improved through refactoring and modularisation. Recommendation explanation generation, external link generation and user feedback collection were moved into dedicated modules, reducing coupling between components and improving maintainability. Automated testing confirmed that these structural improvements did not introduce regressions.
 
+## 26/06/2026
+
+* Conducted user testing with 5 participants using the completed NextTrack application.
+* Collected anonymous evaluation feedback through the built-in frontend evaluation form.
+* Recorded user ratings for recommendation relevance, recommendation diversity, interface usability and overall satisfaction.
+* Reviewed participant comments to identify strengths and potential improvements.
+* Confirmed that users generally found the interface easy to use and the recommendations relevant.
+* Identified future improvements based on user feedback, including expanding the music dataset and refining recommendation quality.
+* Used the evaluation results to support the final project evaluation and dissertation evidence.
+
+
 # Development Reflection
 
 ## What Worked Well
