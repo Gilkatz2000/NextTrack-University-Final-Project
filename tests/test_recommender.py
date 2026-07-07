@@ -79,7 +79,7 @@ def test_diversity_rules_limit_artist_and_genre_repetition():
     genre_counts = Counter(item["genre"] for item in recommendations)
 
     assert max(artist_counts.values()) <= 2
-    assert max(genre_counts.values()) <= 3
+    assert max(genre_counts.values()) <= 6
 
 
 def test_unknown_inputs_do_not_crash_and_still_return_recommendations():

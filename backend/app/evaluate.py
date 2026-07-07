@@ -62,7 +62,7 @@ def evaluate_session(session):
         "mood_match_rate": relevance_metrics["mood_match_rate"],
         "passed_response_time": response_time < 1,
         "passed_artist_diversity": max_artist_repetition <= 2,
-        "passed_genre_diversity": max_genre_repetition <= 3,
+        "passed_genre_diversity": max_genre_repetition <= 6,
     }
 
 

@@ -134,15 +134,39 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
     artist_count = {}
     genre_count = {}
 
+    has_preference_matches = (
+        ranked_tracks["genre"].isin(genres) | (ranked_tracks["mood"] == mood)
+    ).any()
+
     for _, row in ranked_tracks.iterrows():
         artist = row["artist"]
         genre = row["genre"]
 
-        if artist_count.get(artist, 0) >= 2:
+        mood_matches = row["mood"] == mood
+        genre_matches = genre in genres
+
+        # Prefer tracks that match the selected genre or mood.
+        # If the user enters unknown values, fall back to the strongest overall
+        # similarity results so the API still returns recommendations.
+        if has_preference_matches and not genre_matches and not mood_matches:
             continue
 
-        if genre_count.get(genre, 0) >= 3:
+        if artist_count.get(artist, 0) >= 1:
             continue
+
+        # Diversity rule:
+        # The selected genre is allowed to appear more often because it is the
+        # user's main preference. Other genres are still limited so the list does
+        # not become repetitive.
+        selected_genre_limit = max(5, limit // 2)
+        other_genre_limit = 2
+
+        if genre_matches:
+            if genre_count.get(genre, 0) >= selected_genre_limit:
+                continue
+        else:
+            if genre_count.get(genre, 0) >= other_genre_limit:
+                continue
 
         recommendation = {
             "track": row["track"],

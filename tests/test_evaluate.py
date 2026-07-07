@@ -9,7 +9,7 @@ def test_evaluate_session_returns_expected_metrics():
     assert result["recommendation_count"] > 0
     assert result["response_time_seconds"] >= 0
     assert result["max_artist_repetition"] <= 2
-    assert result["max_genre_repetition"] <= 3
+    assert result["max_genre_repetition"] <= 6
     assert result["passed_response_time"] is True
     assert result["passed_artist_diversity"] is True
     assert result["passed_genre_diversity"] is True

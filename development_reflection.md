@@ -112,6 +112,23 @@ The project structure was further improved through refactoring and modularisatio
 * Identified future improvements based on user feedback, including expanding the music dataset and refining recommendation quality.
 * Used the evaluation results to support the final project evaluation and dissertation evidence.
 
+## 07/07/2026
+
+* Expanded the music dataset from approximately 350 tracks to around 1,000 real songs.
+* Increased the number of supported artists from over 200 to more than 550.
+* Increased genre coverage to 25 genres, improving recommendation diversity and user choice.
+* Improved recommendation ranking by refining diversity filtering to better prioritise the user's selected genre while maintaining artist diversity.
+* Updated the recommendation explanation service to provide clearer and more informative explanations for genre, mood and artist matching.
+* Improved recommendation transparency by explaining when recommendations provide additional variety while still matching the user's selected mood.
+* Refined recommendation ordering to prioritise exact genre and mood matches before introducing diverse recommendations from related genres.
+* Improved recommendation quality through iterative testing across a wide range of genres, moods and artists.
+* Added expandable recommendation details showing tempo, energy, popularity, danceability, valence and release year in a more user-friendly format.
+* Improved frontend presentation and usability through multiple interface refinements based on user feedback.
+* Conducted extensive manual validation of recommendation quality using many different recommendation scenarios.
+* Reviewed recommendation explanations and recommendation ordering to improve consistency across different user inputs.
+* Updated dataset statistics displayed within the frontend to reflect the expanded catalogue.
+* Verified that all 18 automated tests continued to pass successfully after the dataset expansion and recommendation improvements.
+* Finalised the core implementation of NextTrack, leaving primarily dissertation writing, evidence collection and final evaluation as the remaining tasks.
 
 # Development Reflection
 
@@ -123,11 +140,15 @@ One of the most useful improvements during development was introducing automated
 
 ### Dataset Expansion
 
-The original prototype contained only a very small number of tracks, which limited recommendation quality and evaluation. Expanding the dataset first to 48 tracks, then to 250 real songs and finally to 350 tracks significantly improved recommendation variety and allowed more realistic testing scenarios. The larger dataset also provided a wider range of genres, moods and artists.
+The original prototype contained only a very small number of tracks, which limited recommendation quality and evaluation. The dataset was progressively expanded to approximately 1,000 real songs covering more than 550 artists and 25 genres. This significantly improved recommendation variety, reduced repetitive recommendations and provided a much more realistic environment for user evaluation.
 
 ### Recommendation Performance
 
 Despite increasing the dataset size substantially, the recommendation engine remained very fast. Evaluation results showed that recommendations could still be generated in a fraction of a second, indicating that the cosine similarity approach is efficient for the current project scale.
+
+### Recommendation Quality
+
+Recommendation quality improved throughout the final development stage. Recommendation ranking was refined so that exact genre and mood matches are prioritised before introducing additional recommendations that increase diversity. Recommendation explanations were also updated to provide clearer reasoning, helping users understand why each recommendation was selected while improving transparency and trust in the system.
 
 ### Diversity Filtering
 
@@ -157,13 +178,14 @@ A Streamlit frontend was added to provide a simple user interface for the recomm
 
 The project evolved from a standalone backend API into a complete application. The frontend communicates with the FastAPI backend, retrieves available options from the dataset and displays recommendations through a user-friendly interface.
 
-### User Evaluation Infrastructure
+### User Evaluation
 
-An evaluation form was added to collect anonymous user feedback on recommendation quality, diversity, usability and overall satisfaction. Feedback is stored in CSV format, providing evaluation data without requiring databases or user accounts.
+Five participants evaluated the completed recommendation system using the integrated evaluation form. Anonymous ratings were collected for recommendation relevance, diversity, interface usability and overall satisfaction. The collected feedback was used to refine recommendation ordering, recommendation explanations and several frontend usability improvements before finalising the implementation.
 
 ### Frontend Usability Improvements
 
-Several usability improvements were added to the Streamlit frontend. Users can now reset recommendation inputs, view additional track metadata through expandable detail panels and access external Spotify and YouTube search links directly from recommendation results. These additions improved the overall user experience while maintaining the simplicity of the interface.
+
+The frontend evolved considerably during development. Users can reset recommendation inputs, view detailed track information through expandable panels, access Spotify and YouTube search links and submit anonymous evaluation feedback directly from the interface. Recommendation cards were also refined to improve readability while presenting recommendation explanations, match percentages and track metadata in a more user-friendly format.
 
 ### Software Engineering Improvements
 
@@ -171,9 +193,9 @@ The project structure was further improved through refactoring and modularisatio
 
 ## Challenges and Limitations
 
-### Dataset Size
+### Dataset Quality
 
-Although the dataset was expanded to 350 tracks, it remains very small compared to commercial music recommendation systems that operate on millions of tracks. This limits recommendation variety and makes large-scale evaluation impossible within the scope of the project.
+Although the dataset now contains approximately 1,000 songs, maintaining high-quality metadata remains challenging. Genre classification, mood assignment and other track attributes require careful validation because music often fits multiple genres and moods. Recommendation quality therefore depends not only on the recommendation algorithm but also on the consistency and accuracy of the underlying dataset.
 
 ### Measuring Recommendation Quality
 
@@ -181,7 +203,7 @@ Technical metrics such as response time, diversity and recommendation relevance 
 
 ### Limited User Evaluation
 
-Current evaluation has focused primarily on automated testing and predefined test sessions. While this provides useful technical evidence, it does not fully represent how real users would interact with the system. User evaluation will be an important part of the next development stage.
+Five participants evaluated the completed recommendation system using the integrated evaluation form. Although this provided valuable qualitative feedback and supported the project evaluation, a larger and more diverse participant group would improve the statistical reliability of the results and better represent different musical preferences.
 
 ### Simple Recommendation Approach
 
@@ -201,4 +223,4 @@ Providing direct music playback proved challenging because the project intention
 
 ## Remaining Work
 
-The remaining work will focus on expanding user evaluation, analysing evaluation results, collecting dissertation evidence and screenshots, and updating the final dissertation to reflect the completed implementation and findings.
+The core implementation of NextTrack has now been completed. The remaining work focuses on improving dataset quality through additional metadata validation, analysing user evaluation results, collecting final dissertation evidence and screenshots, completing the final dissertation chapters and performing final testing before submission.

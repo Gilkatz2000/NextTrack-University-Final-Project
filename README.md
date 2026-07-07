@@ -1,65 +1,135 @@
 # NextTrack
 
-## Project Overview
+## University of London CM3070 Final Project
 
-NextTrack is a music recommendation API developed as part of my University of London CM3070 Computer Science Final Project.
+NextTrack is a stateless session-based music recommendation system developed as part of the University of London Computer Science Final Project.
 
-The aim of the project is to investigate whether useful music recommendations can be generated using temporary session information without storing user accounts, listening history or long-term user profiles.
+The project investigates whether useful music recommendations can be generated using only the user's current session preferences without storing user accounts, listening history or long-term user profiles.
 
-The system uses music metadata together with a cosine similarity recommendation algorithm to generate recommendations based on the user's current preferences.
+The system uses cosine similarity together with weighted ranking, diversity filtering and recommendation explanations to generate personalised music recommendations.
 
-## Current Features
+---
 
-* FastAPI backend
-* Session-based recommendation generation
-* Music metadata dataset
-* Cosine similarity recommendation algorithm
-* Artist and genre diversity filtering
-* Recommendation explanations
-* JSON API responses
-* Automated testing using pytest
-* Evaluation framework
-* Baseline recommender for comparison
-* CSV evaluation reports
+# Features
 
-## Technologies Used
+- FastAPI REST backend
+- Streamlit frontend
+- Stateless session-based recommendations
+- Cosine similarity recommendation engine
+- Weighted genre, mood and artist ranking
+- Artist and genre diversity filtering
+- Human-readable recommendation explanations
+- Spotify search links
+- YouTube search links
+- Recommendation details (tempo, energy, popularity, danceability, valence and release year)
+- Anonymous CSV-based user evaluation
+- Automated testing with pytest
+- Model comparison framework
+- Evaluation framework
 
-* Python
-* FastAPI
-* Pandas
-* NumPy
-* Scikit-learn
-* Pytest
+---
 
-## API Endpoints
+# Dataset
 
-| Endpoint          | Description              |
-| ----------------- | ------------------------ |
-| `GET /`           | Root endpoint            |
-| `GET /health`     | Health check             |
-| `POST /recommend` | Generate recommendations |
+The recommendation engine currently uses approximately **1,000 curated songs**.
 
-## Running the Project
+Each track contains:
 
-Install the required packages:
+- Track name
+- Artist
+- Genre
+- Mood
+- Tempo
+- Energy
+- Popularity
+- Danceability
+- Valence
+- Release year
+- Spotify Track ID (optional)
+
+The dataset was created by transforming a public Spotify-derived music dataset into the NextTrack schema. The data were cleaned, filtered, balanced and enriched to improve recommendation quality while maintaining a lightweight recommendation system suitable for evaluation.
+
+---
+
+# Technologies
+
+- Python
+- FastAPI
+- Streamlit
+- Pandas
+- NumPy
+- Scikit-learn
+- Pytest
+
+---
+
+# Project Structure
+
+```text
+Code/
+├── backend/
+│   ├── app/
+│   ├── data/
+│   └── services/
+│
+├── frontend/
+│   ├── app.py
+│   └── feedback.py
+│
+├── tests/
+│
+├── evaluation/
+│
+├── evidence/
+│
+├── results/
+│
+├── development_reflection.md
+├── requirements.txt
+└── README.md
+```
+
+---
+
+# Running the Project
+
+## 1. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Start the API:
+---
+
+## 2. Start the backend
 
 ```bash
-uvicorn app.main:app --reload
+PYTHONPATH=backend python -m uvicorn app.main:app --reload
 ```
 
-Open the Swagger documentation:
+Swagger documentation:
 
-```text
+```
 http://127.0.0.1:8000/docs
 ```
 
-## Running Tests
+---
+
+## 3. Start the frontend
+
+```bash
+streamlit run frontend/app.py
+```
+
+Frontend:
+
+```
+http://localhost:8501
+```
+
+---
+
+# Running Tests
 
 Run all automated tests:
 
@@ -67,69 +137,61 @@ Run all automated tests:
 python -m pytest
 ```
 
-## Running the Evaluation
+Current status:
 
-Run the evaluation framework:
+- **18 automated tests**
+- All tests passing
 
-```bash
-PYTHONPATH=NextTrack python NextTrack/app/evaluate.py
-```
+---
 
-Results will be saved to:
+# Evaluation
 
-```text
-evaluation_results.csv
-```
+The project includes:
 
-The evaluation currently measures:
+- Recommendation evaluation framework
+- Model comparison framework
+- Anonymous user evaluation
+- CSV feedback collection
 
-* Response time
-* Artist diversity
-* Genre diversity
-* Genre match rate
-* Mood match rate
-
-## Baseline Comparison
-
-A simple baseline recommender was created for comparison purposes. The baseline uses genre matching and popularity ranking only.
-
-Run the comparison:
-
-```bash
-PYTHONPATH=NextTrack python NextTrack/app/compare_models.py
-```
-
-Results will be saved to:
+User evaluations are saved to:
 
 ```text
-model_comparison_metrics.csv
+evaluation/user_feedback.csv
 ```
 
-## Project Structure
+---
 
-```text
-NextTrack/
-├── app/
-│   ├── main.py
-│   ├── recommender.py
-│   ├── evaluate.py
-│   ├── baseline.py
-│   ├── compare_models.py
-│   ├── dataset.csv
-│   └── test_sessions.py
-│
-├── tests/
-│   ├── test_api.py
-│   ├── test_evaluate.py
-│   └── test_recommender.py
-│
-├── evaluation_results.csv
-├── model_comparison_metrics.csv
-├── development_reflection.md
-├── requirements.txt
-└── README.md
-```
+# Recommendation Method
 
-## Project Status
+NextTrack combines several techniques:
 
-The project has progressed beyond the preliminary prototype stage. Recent work has focused on expanding the dataset, introducing automated testing, improving evaluation methods, adding recommendation explanations and comparing the recommendation engine against a baseline approach.
+1. Cosine similarity
+2. Genre weighting
+3. Mood weighting
+4. Optional artist preference weighting
+5. Artist diversity filtering
+6. Genre diversity filtering
+
+This produces recommendations that remain relevant while avoiding excessive repetition.
+
+---
+
+# Project Status
+
+Current implementation includes:
+
+- FastAPI backend
+- Streamlit frontend
+- Approximately 1,000-song dataset
+- Recommendation explanations
+- Spotify and YouTube search links
+- Anonymous user evaluation
+- Automated testing
+- Model comparison
+- Evaluation framework
+
+The project is intended for educational purposes as part of the University of London CM3070 Computer Science Final Project.
+
+---
+
+**Author:** Gil Katz
