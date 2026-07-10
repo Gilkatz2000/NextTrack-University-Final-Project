@@ -13,13 +13,19 @@ from app.services.recommendation_reasons import build_recommendation_reason
 def get_recommendations(genres, mood, seed_artists, limit=10):
     df = load_tracks()
 
-    genres = [g.lower() for g in genres]
-    seed_artists = [a.lower() for a in seed_artists]
-    mood = mood.lower()
+    genres = [str(g).strip().lower() for g in genres]
+    seed_artists = [
+        str(artist).strip().lower()
+        for artist in seed_artists
+    ]
+    mood = str(mood).strip().lower()
 
-    df["genre"] = df["genre"].str.lower()
-    df["mood"] = df["mood"].str.lower()
-    df["artist"] = df["artist"].str.lower()
+    df["display_track"] = df["track"].astype(str).str.strip()
+    df["display_artist"] = df["artist"].astype(str).str.strip()
+
+    df["genre"] = df["genre"].astype(str).str.strip().str.lower()
+    df["mood"] = df["mood"].astype(str).str.strip().str.lower()
+    df["artist"] = df["artist"].astype(str).str.strip().str.lower()
 
     feature_df = df[
         [
@@ -118,8 +124,23 @@ def get_recommendations(genres, mood, seed_artists, limit=10):
         ascending=False,
     )
 
+    candidate_frames = [ranked_tracks.head(max(50, limit * 5))]
+
+    for genre in genres:
+        genre_candidates = ranked_tracks[
+            ranked_tracks["genre"] == genre
+        ].head(max(15, limit * 2))
+
+        candidate_frames.append(genre_candidates)
+
+    candidate_pool = (
+        pd.concat(candidate_frames)
+        .drop_duplicates(subset=["track", "artist"])
+        .sort_values(by="adjusted_score", ascending=False)
+    )
+
     diversified = apply_diversity_filter(
-        ranked_tracks,
+        candidate_pool,
         genres,
         mood,
         seed_artists,
@@ -129,48 +150,79 @@ def get_recommendations(genres, mood, seed_artists, limit=10):
     return diversified
 
 
-def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
+def apply_diversity_filter(
+    ranked_tracks,
+    genres,
+    mood,
+    seed_artists,
+    limit,
+):
     recommendations = []
-    artist_count = {}
+    selected_keys = set()
+    used_artists = set()
     genre_count = {}
 
+    selected_genres = list(dict.fromkeys(genres))
+
     has_preference_matches = (
-        ranked_tracks["genre"].isin(genres) | (ranked_tracks["mood"] == mood)
+        ranked_tracks["genre"].isin(selected_genres)
+        | (ranked_tracks["mood"] == mood)
     ).any()
 
-    for _, row in ranked_tracks.iterrows():
-        artist = row["artist"]
+    def track_key(row):
+        """Return a normalized identifier for duplicate prevention."""
+        return (
+            str(row["track"]).strip().lower(),
+            str(row["artist"]).strip().lower(),
+        )
+
+    def can_select(row, enforce_run_rule=True):
+        """Check whether a candidate satisfies the diversity rules."""
+        artist = str(row["artist"]).strip().lower()
+        key = track_key(row)
         genre = row["genre"]
 
+        if key in selected_keys:
+            return False
+
+        # Maximum one recommendation per artist.
+        if artist in used_artists:
+            return False
+
+        genre_matches = genre in selected_genres
         mood_matches = row["mood"] == mood
-        genre_matches = genre in genres
 
-        # Prefer tracks that match the selected genre or mood.
-        # If the user enters unknown values, fall back to the strongest overall
-        # similarity results so the API still returns recommendations.
-        if has_preference_matches and not genre_matches and not mood_matches:
-            continue
+        # When valid preferences exist, avoid unrelated fallback tracks until
+        # the final fill stage.
+        if (
+            has_preference_matches
+            and not genre_matches
+            and not mood_matches
+        ):
+            return False
 
-        if artist_count.get(artist, 0) >= 1:
-            continue
+        # Never show three consecutive tracks from the same genre.
+        if enforce_run_rule and len(recommendations) >= 2:
+            previous_genre = recommendations[-1]["genre"]
+            second_previous_genre = recommendations[-2]["genre"]
 
-        # Diversity rule:
-        # The selected genre is allowed to appear more often because it is the
-        # user's main preference. Other genres are still limited so the list does
-        # not become repetitive.
-        selected_genre_limit = max(5, limit // 2)
-        other_genre_limit = 2
+            if (
+                genre == previous_genre
+                and genre == second_previous_genre
+            ):
+                return False
 
-        if genre_matches:
-            if genre_count.get(genre, 0) >= selected_genre_limit:
-                continue
-        else:
-            if genre_count.get(genre, 0) >= other_genre_limit:
-                continue
+        return True
+
+    def add_recommendation(row):
+        """Convert a dataframe row and add it to the final results."""
+        artist = str(row["artist"]).strip().lower()
+        genre = row["genre"]
+        key = track_key(row)
 
         recommendation = {
-            "track": row["track"],
-            "artist": row["artist"].title(),
+            "track": row["display_track"],
+            "artist": row["display_artist"],
             "genre": row["genre"],
             "mood": row["mood"],
             "tempo": int(row["tempo"]),
@@ -182,31 +234,111 @@ def apply_diversity_filter(ranked_tracks, genres, mood, seed_artists, limit):
             "score": round(float(row["adjusted_score"]), 3),
             "reason": build_recommendation_reason(
                 row,
-                genres,
+                selected_genres,
                 mood,
                 seed_artists,
             ),
             "spotify_url": build_spotify_search_url(
-                row["track"],
-                row["artist"],
+                row["display_track"],
+                row["display_artist"],
             ),
             "youtube_url": build_youtube_search_url(
-                row["track"],
-                row["artist"],
+                row["display_track"],
+                row["display_artist"],
             ),
         }
 
-        if "spotify_track_id" in row.index and pd.notna(row["spotify_track_id"]):
-            spotify_track_id = str(row["spotify_track_id"]).strip()
+        if (
+            "spotify_track_id" in row.index
+            and pd.notna(row["spotify_track_id"])
+        ):
+            spotify_track_id = str(
+                row["spotify_track_id"]
+            ).strip()
+
             if spotify_track_id:
                 recommendation["spotify_track_id"] = spotify_track_id
 
         recommendations.append(recommendation)
-
-        artist_count[artist] = artist_count.get(artist, 0) + 1
+        selected_keys.add(key)
+        used_artists.add(artist)
         genre_count[genre] = genre_count.get(genre, 0) + 1
 
-        if len(recommendations) == limit:
+    if selected_genres:
+        # Divide the available positions as evenly as possible.
+        #
+        # Example:
+        # 10 results and 3 selected genres -> quotas of 4, 3 and 3.
+        base_quota = limit // len(selected_genres)
+        remainder = limit % len(selected_genres)
+
+        genre_quotas = {
+            genre: base_quota + (1 if index < remainder else 0)
+            for index, genre in enumerate(selected_genres)
+        }
+
+        genre_candidates = {}
+
+        for genre in selected_genres:
+            candidates = ranked_tracks[
+                ranked_tracks["genre"] == genre
+            ].copy()
+
+            # Within each genre, exact mood matches come first. The original
+            # adjusted score remains the secondary ordering criterion.
+            candidates["exact_mood_match"] = (
+                candidates["mood"] == mood
+            ).astype(int)
+
+            candidates = candidates.sort_values(
+                by=["exact_mood_match", "adjusted_score"],
+                ascending=[False, False],
+            )
+
+            genre_candidates[genre] = candidates
+
+        # Round-robin selection prevents the first selected genre from taking
+        # all of the highest positions.
+        progress_made = True
+
+        while len(recommendations) < limit and progress_made:
+            progress_made = False
+
+            for genre in selected_genres:
+                if len(recommendations) >= limit:
+                    break
+
+                if genre_count.get(genre, 0) >= genre_quotas[genre]:
+                    continue
+
+                candidates = genre_candidates[genre]
+
+                for _, row in candidates.iterrows():
+                    if not can_select(row):
+                        continue
+
+                    add_recommendation(row)
+                    progress_made = True
+                    break
+
+    # Fill unused positions from the strongest remaining candidates.
+    #
+    # This is necessary when one selected genre has too few suitable tracks or
+    # its candidates are rejected due to the one-track-per-artist rule.
+    for _, row in ranked_tracks.iterrows():
+        if len(recommendations) >= limit:
             break
+
+        if can_select(row):
+            add_recommendation(row)
+
+    # Final safety fallback: relax only the consecutive-genre rule. Artist and
+    # duplicate protections remain active.
+    for _, row in ranked_tracks.iterrows():
+        if len(recommendations) >= limit:
+            break
+
+        if can_select(row, enforce_run_rule=False):
+            add_recommendation(row)
 
     return recommendations

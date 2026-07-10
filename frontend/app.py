@@ -67,6 +67,7 @@ def reset_inputs():
     st.session_state["artist"] = ""
     st.session_state["recommendations"] = []
 
+options = {}
 
 try:
     options = load_options()
@@ -137,11 +138,17 @@ try:
                 with left:
                     st.markdown(f"### {i}. {rec['track']}")
                     st.write(f"**Artist:** {rec['artist']}")
-                    st.write(f"**Genre:** {rec['genre']} | **Mood:** {rec['mood']}")
+                    st.write(
+                        f"**Genre:** {str(rec['genre']).title()} | "
+                        f"**Mood:** {str(rec['mood']).title()}"
+                    )
                     st.write(f"**Why recommended:** {rec['reason']}")
 
                     match_percentage = round(float(rec["score"]) * 100)
-                    st.write(f"**Session score:** {match_percentage}%")
+
+                    st.write(
+                        f"**Match score:** {match_percentage}/100"
+                    )
 
                     with st.expander("View track details"):
                         energy_percentage = round(float(rec["energy"]) * 100)
@@ -245,10 +252,10 @@ with col1:
     st.metric("Dataset Size", f"{stats.get('track_count', 350)} tracks")
 
 with col2:
-    st.metric("Genres", stats.get("genre_count", "Available"))
+    st.metric("Music Genres", stats.get("genre_count", "Available"))
 
 with col3:
-    st.metric("Artists", stats.get("artist_count", "Available"))
+    st.metric("Unique Artists", stats.get("artist_count", "Available"))
 
 st.write(
     "NextTrack is a stateless session-based recommendation system. "
