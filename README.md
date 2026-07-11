@@ -63,27 +63,40 @@ The dataset was created by transforming a public Spotify-derived music dataset i
 
 ---
 
+# Requirements
+
+- Python 3.12
+- pip
+
+---
+
 # Project Structure
 
 ```text
 Code/
 ├── backend/
 │   ├── app/
-│   ├── data/
-│   └── services/
+│   │   ├── services/
+│   │   ├── main.py
+│   │   ├── recommender.py
+│   │   ├── data_loader.py
+│   │   ├── models.py
+│   │   ├── evaluate.py
+│   │   └── compare_models.py
+│   └── data/
 │
 ├── frontend/
 │   ├── app.py
-│   └── feedback.py
+│   ├── api.py
+│   ├── components.py
+│   ├── feedback.py
+│   ├── helpers.py
+│   └── styles/
 │
 ├── tests/
-│
 ├── evaluation/
-│
 ├── evidence/
-│
 ├── results/
-│
 ├── development_reflection.md
 ├── requirements.txt
 └── README.md
@@ -117,6 +130,8 @@ http://127.0.0.1:8000/docs
 
 ## 3. Start the frontend
 
+Run the frontend in a separate terminal window.
+
 ```bash
 streamlit run frontend/app.py
 ```
@@ -131,7 +146,7 @@ http://localhost:8501
 
 # Running Tests
 
-Run all automated tests:
+Run all automated tests from the project root:
 
 ```bash
 python -m pytest
@@ -139,7 +154,7 @@ python -m pytest
 
 Current status:
 
-- **18 automated tests**
+- **30 automated tests**
 - All tests passing
 
 ---
@@ -153,7 +168,7 @@ The project includes:
 - Anonymous user evaluation
 - CSV feedback collection
 
-User evaluations are saved to:
+Recommendation sessions are stateless and are not stored. Anonymous evaluation responses are saved locally to:
 
 ```text
 evaluation/user_feedback.csv
@@ -190,7 +205,7 @@ Current implementation includes:
 - Model comparison
 - Evaluation framework
 
-The project is intended for educational purposes as part of the University of London CM3070 Computer Science Final Project.
+The project was developed for educational purposes as part of the University of London CM3070 Computer Science Final Project.
 
 ---
 

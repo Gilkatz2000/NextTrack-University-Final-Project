@@ -112,11 +112,12 @@ The project structure was further improved through refactoring and modularisatio
 * Identified future improvements based on user feedback, including expanding the music dataset and refining recommendation quality.
 * Used the evaluation results to support the final project evaluation and dissertation evidence.
 
-## 07/07/2026
+## 28/06/2026 – 07/07/2026
 
 * Expanded the music dataset from approximately 350 tracks to around 1,000 real songs.
 * Increased the number of supported artists from over 200 to more than 550.
 * Increased genre coverage to 25 genres, improving recommendation diversity and user choice.
+* Identified metadata quality issues introduced during the dataset expansion and progressively refined genre, mood and artist information.
 * Improved recommendation ranking by refining diversity filtering to better prioritise the user's selected genre while maintaining artist diversity.
 * Updated the recommendation explanation service to provide clearer and more informative explanations for genre, mood and artist matching.
 * Improved recommendation transparency by explaining when recommendations provide additional variety while still matching the user's selected mood.
@@ -127,8 +128,22 @@ The project structure was further improved through refactoring and modularisatio
 * Conducted extensive manual validation of recommendation quality using many different recommendation scenarios.
 * Reviewed recommendation explanations and recommendation ordering to improve consistency across different user inputs.
 * Updated dataset statistics displayed within the frontend to reflect the expanded catalogue.
-* Verified that all 18 automated tests continued to pass successfully after the dataset expansion and recommendation improvements.
+* Verified that all automated tests continued to pass successfully after the dataset expansion and recommendation improvements.
 * Finalised the core implementation of NextTrack, leaving primarily dissertation writing, evidence collection and final evaluation as the remaining tasks.
+
+## 08/07/2026 - 11/07/2026 
+
+* Expanded and refined the music dataset to approximately 900 curated tracks covering a wider range of artists, genres and moods.
+* Continued improving recommendation quality through iterative tuning of genre, mood and artist weighting.
+* Refined the diversity filtering strategy to better balance recommendation relevance with artist and genre variety.
+* Improved recommendation explanations to provide clearer and more informative reasoning for each suggested track.
+* Enhanced the Streamlit frontend with improved layout, recommendation cards and overall usability.
+* Added an About section describing the recommendation approach and stateless design.
+* Performed project-wide code review and cleanup, improving readability, maintainability and project structure.
+* Updated the project documentation, dependency configuration and repository structure for final submission.
+* Increased the automated test suite to **30 tests**, verifying that all tests continued to pass successfully after the final improvements.
+* Completed the implementation of NextTrack and prepared the project for final submission.
+
 
 # Development Reflection
 
@@ -136,11 +151,11 @@ The project structure was further improved through refactoring and modularisatio
 
 ### Automated Testing
 
-One of the most useful improvements during development was introducing automated testing with pytest. Before this, changes had to be checked manually. The project now contains 18 automated tests covering API endpoints, recommendation functionality, dataset validation and evaluation components. The tests made it much easier to verify that new features and refactoring work did not introduce regressions.
+One of the most useful improvements during development was introducing automated testing with pytest. Before this, changes had to be checked manually. The project now contains 30 automated tests covering API endpoints, recommendation functionality, dataset validation and evaluation components. The tests made it much easier to verify that new features, refactoring work and recommendation improvements did not introduce regressions.
 
 ### Dataset Expansion
 
-The original prototype contained only a very small number of tracks, which limited recommendation quality and evaluation. The dataset was progressively expanded to approximately 1,000 real songs covering more than 550 artists and 25 genres. This significantly improved recommendation variety, reduced repetitive recommendations and provided a much more realistic environment for user evaluation.
+The original prototype contained only a very small number of tracks, which limited recommendation quality and evaluation. The dataset was progressively expanded to 900 real songs covering more than 340 artists, 11 genres and 12 moods. This significantly improved recommendation variety, reduced repetitive recommendations, and provided a much more realistic environment for user evaluation.
 
 ### Recommendation Performance
 
@@ -184,7 +199,6 @@ Five participants evaluated the completed recommendation system using the integr
 
 ### Frontend Usability Improvements
 
-
 The frontend evolved considerably during development. Users can reset recommendation inputs, view detailed track information through expandable panels, access Spotify and YouTube search links and submit anonymous evaluation feedback directly from the interface. Recommendation cards were also refined to improve readability while presenting recommendation explanations, match percentages and track metadata in a more user-friendly format.
 
 ### Software Engineering Improvements
@@ -223,4 +237,4 @@ Providing direct music playback proved challenging because the project intention
 
 ## Remaining Work
 
-The core implementation of NextTrack has now been completed. The remaining work focuses on improving dataset quality through additional metadata validation, analysing user evaluation results, collecting final dissertation evidence and screenshots, completing the final dissertation chapters and performing final testing before submission.
+The implementation of NextTrack has been completed. The remaining work is limited to final dissertation submission and any minor corrections identified during assessment. Future improvements could include expanding the dataset further, improving metadata quality, incorporating larger-scale user evaluation and exploring more advanced recommendation techniques such as collaborative or hybrid recommendation models.

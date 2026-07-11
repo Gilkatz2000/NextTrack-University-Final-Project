@@ -335,3 +335,8 @@ hr {
         min-height: auto;
     }
 }
+
+/* Hide Streamlit heading anchor links */
+[data-testid="stHeaderActionElements"] {
+    display: none !important;
+}

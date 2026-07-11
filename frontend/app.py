@@ -54,7 +54,6 @@ def generate_recommendations(
     st.session_state["recommendations"] = recommendations[
         :MAX_RECOMMENDATIONS
     ]
-    
     st.session_state["generated_artist"] = artist
 
     if st.session_state["recommendations"]:

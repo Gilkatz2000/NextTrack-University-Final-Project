@@ -17,7 +17,7 @@ def render_hero():
         '<h1 class="main-title">🎵 NextTrack</h1>'
         '<h2 class="hero-heading">'
         'Discover your next '
-        '<span class="main-title-accent">favourite track.</span>'
+        '<span class="main-title-accent">favorite track.</span>'
         '</h2>'
         '<p class="subtitle">'
         'Choose genres, mood and an optional artist to receive personalised '
