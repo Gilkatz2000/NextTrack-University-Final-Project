@@ -54,6 +54,8 @@ def generate_recommendations(
     st.session_state["recommendations"] = recommendations[
         :MAX_RECOMMENDATIONS
     ]
+    
+    st.session_state["generated_artist"] = artist
 
     if st.session_state["recommendations"]:
         recommendation_count = len(
@@ -100,7 +102,10 @@ def run_app():
 
         if recommendations:
             render_recommendations(
-                recommendations
+                recommendations,
+                selected_artist=st.session_state[
+                    "generated_artist"
+                ],
             )
 
             render_evaluation_form(

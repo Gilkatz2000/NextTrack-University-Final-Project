@@ -25,6 +25,7 @@ def initialise_session_state():
         "mood": "",
         "artist": "",
         "recommendations": [],
+        "generated_artist": "",
         "feedback_submitted": False,
     }
 
@@ -32,14 +33,13 @@ def initialise_session_state():
         if key not in st.session_state:
             st.session_state[key] = default_value
 
-
 def reset_inputs():
     st.session_state["genres"] = []
     st.session_state["mood"] = ""
     st.session_state["artist"] = ""
     st.session_state["recommendations"] = []
+    st.session_state["generated_artist"] = ""
     st.session_state["feedback_submitted"] = False
-
 
 def safe_text(value, default="Unknown"):
     if value is None:
@@ -52,6 +52,27 @@ def safe_text(value, default="Unknown"):
 
     return html.escape(text)
 
+def format_genre(value):
+    """Return a safely escaped, human-readable genre label."""
+
+    cleaned = str(
+        value or "Unknown"
+    ).strip().lower()
+
+    display_names = {
+        "r&b": "R&B",
+        "hip hop": "Hip Hop",
+        "synthpop": "Synthpop",
+    }
+
+    display_value = display_names.get(
+        cleaned,
+        cleaned.title(),
+    )
+
+    return html.escape(
+        display_value
+    )
 
 def safe_percentage(value):
     try:
@@ -74,8 +95,15 @@ def safe_number(value, default=0):
         return default
 
 
-def shorten_reason(reason, maximum_length=155):
-    cleaned_reason = str(reason or "").strip()
+def shorten_reason(
+    reason,
+    maximum_length=155,
+):
+    """Create a concise recommendation explanation for the result card."""
+
+    cleaned_reason = str(
+        reason or ""
+    ).strip()
 
     if not cleaned_reason:
         return (
@@ -85,15 +113,20 @@ def shorten_reason(reason, maximum_length=155):
     cleaned_reason = cleaned_reason.replace(
         "Recommended because ",
         "",
+        1,
     )
 
     cleaned_reason = cleaned_reason.rstrip(".")
 
     replacements = {
+        "it matches both your selected genre and labelled mood":
+            "matches your selected genre and mood",
         "it matches both your selected genre and mood":
             "matches your selected genre and mood",
         "it matches your selected genre":
             "matches your selected genre",
+        "it matches your selected mood while adding genre variety":
+            "matches your selected mood while adding genre variety",
         "although its labelled mood differs from your selection":
             "with a different labelled mood",
         "has a high energy level":
@@ -110,15 +143,32 @@ def shorten_reason(reason, maximum_length=155):
             replacement,
         )
 
-    cleaned_reason = " ".join(cleaned_reason.split())
+    cleaned_reason = " ".join(
+        cleaned_reason.split()
+    )
 
-    if len(cleaned_reason) <= maximum_length:
-        return (
+    # Capitalise before either the full or shortened version is returned.
+    # Previously, truncated explanations could remain lowercase.
+    if cleaned_reason:
+        cleaned_reason = (
             cleaned_reason[0].upper()
             + cleaned_reason[1:]
-            + "."
         )
 
-    shortened = cleaned_reason[:maximum_length].rsplit(" ", 1)[0]
+    if len(cleaned_reason) <= maximum_length:
+        return cleaned_reason + "."
 
-    return shortened.rstrip(",;:") + "…"
+    shortened = (
+        cleaned_reason[:maximum_length]
+        .rsplit(
+            " ",
+            1,
+        )[0]
+    )
+
+    return (
+        shortened.rstrip(
+            ",;:"
+        )
+        + "…"
+    )

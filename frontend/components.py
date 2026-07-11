@@ -3,6 +3,7 @@ import streamlit as st
 
 from feedback import save_feedback
 from helpers import (
+    format_genre,
     reset_inputs,
     safe_number,
     safe_percentage,
@@ -110,7 +111,11 @@ def render_preferences(options):
 def render_recommendation(rec, position):
     track = safe_text(rec.get("track"), "Unknown track")
     artist = safe_text(rec.get("artist"), "Unknown artist")
-    genre = safe_text(rec.get("genre"), "Unknown").title()
+    
+    genre = format_genre(
+    rec.get("genre")
+    )
+
     mood = safe_text(rec.get("mood"), "Unknown").title()
 
     full_reason = safe_text(
@@ -265,8 +270,53 @@ def render_search_buttons(rec):
             "No search links are available."
         )
 
+def render_artist_influence_notice(
+    recommendations,
+    selected_artist,
+):
+    """Explain when an artist has limited influence on the current session."""
 
-def render_recommendations(recommendations):
+    selected_artist = str(
+        selected_artist or ""
+    ).strip()
+
+    if not selected_artist:
+        return
+
+    artist_influence_phrases = (
+        "is by an artist you selected",
+        "audio characteristics similar to your selected artist",
+    )
+
+    artist_influence_detected = any(
+        any(
+            phrase in str(
+                recommendation.get(
+                    "reason",
+                    "",
+                )
+            ).lower()
+            for phrase in artist_influence_phrases
+        )
+        for recommendation in recommendations
+    )
+
+    if not artist_influence_detected:
+        safe_artist = safe_text(
+            selected_artist
+        )
+
+        st.info(
+            f"{safe_artist} differs from the strongest matches for your "
+            "chosen genre and mood, so NextTrack prioritised your current "
+            "session preferences."
+        )
+
+
+def render_recommendations(
+    recommendations,
+    selected_artist="",
+):
     st.markdown("## Your recommendations")
 
     st.markdown(
@@ -280,6 +330,11 @@ def render_recommendations(recommendations):
             """
         ),
         unsafe_allow_html=True,
+    )
+
+    render_artist_influence_notice(
+        recommendations,
+        selected_artist,
     )
 
     for position, recommendation in enumerate(
